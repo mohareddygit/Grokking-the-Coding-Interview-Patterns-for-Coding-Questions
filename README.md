@@ -38,7 +38,7 @@ Before solving Leetcode problems, make sure you are familiar with the following:
 
     * Data Structures and Algorithms in Java
 
-        L Data Structure: Stack, Queue, Graph, Tree, etc.
+        L Data Structure: A7Stack, Queue, B4Graph, Tree, etc.
 
         L Algorithms: Sorting, Searching, etc
 
@@ -49,77 +49,77 @@ Coding Interview Patterns are classified according to skills level:
 
 #### * Fundamental:
 
-[1. Two Pointers ](src/Two_Pointers)
+[1. Two Pointers ](src/A1Two_Pointers)
     
-[2. Fast And Slow Pointers ](src/Fast_And_Slow_Pointers)
+[2. Fast And Slow Pointers ](src/A2Fast_And_Slow_Pointers)
     
-[3. Sliding Window ](src/Sliding_Window)
+[3. Sliding Window ](src/A3Sliding_Window)
     
-[4. Merge Intervals ](src/Merge_Intervals)
+[4. Merge Intervals ](src/A4Merge_Intervals)
     
-[5. Cyclic Sort ](src/Cyclic_Sort)
+[5. Cyclic Sort ](src/A5Cyclic_Sort)
     
-[6. LinkedList - In-Place Reversal ](src/LinkedList_In_Place_Traversal)
+[6. LinkedList - In-Place Reversal ](src/A6LinkedList_In_Place_Traversal)
     
-[7. Stack ](src/Stack)
+[7. Stack ](src/A7Stack)
     
-[8. Island Pattern (Matrix Traversal) ](src/Island_Matrix_Traversal)
+[8. Island Pattern (Matrix Traversal) ](src/A8Island_Matrix_Traversal)
 
-[9. Prefix Sum ](src/Prefix_Sum)
+[9. Prefix Sum ](src/A9Prefix_Sum)
 
 #### * Intermediate:
 
-[1. Hash Map ](src/HashMap_HashTable)
+[1. Hash Map ](src/B1HashMap_HashTable)
 
-[2. Tree - Breadth First Search ](src/Tree_Breadth_First_Search)
+[2. Tree - Breadth First Search ](src/B2Tree_Breadth_First_Search)
 
-[3. Tree - Depth First Search ](src/Tree_Depth_First_Search)
+[3. Tree - Depth First Search ](src/B3Tree_Depth_First_Search)
 
-[4. Graph ](src/Graph)
+[4. Graph ](src/B4Graph)
 
-[5. Heap ](src/Heap)
+[5. Heap ](src/B5Heap)
 
-[6. Modified Binary Search ](src/Modified_Binary_Search)
+[6. Modified Binary Search ](src/B6Modified_Binary_Search)
 
-[7. Top K Elements ](src/Top_K_Elements)
+[7. Top K Elements ](src/B7Top_K_Elements)
 
-[8. K Way Merge ](src/K_Way_Merge)
+[8. K Way Merge ](src/B8K_Way_Merge)
 
-[9. Greedy Algorithm ](src/Greedy_Algorithm)
+[9. Greedy Algorithm ](src/B9Greedy_Algorithm)
 
-[10. Concurrency ](src/Concurrency)
+[10. Concurrency ](src/B10Concurrency)
 
 #### * Advanced:
 
-[1. Monotonic Stack ](src/Monotonic_Stack)
+[1. Monotonic Stack ](src/C1Monotonic_Stack)
 
-[2. Subsets ](src/Subsets)
+[2. Subsets ](src/C2Subsets)
 
-[3. Bitwise XOR ](src/Bitwise_XOR)
+[3. Bitwise XOR ](src/C3Bitwise_XOR)
 
-[4. Dynamic Programming ](src/Dynamic_Programming)
-
-
-- [4a. 0/1 Knapsack ](src/Dynamic_Programming/_1_0_Knapsack)
-
-- [4b. Unbounded Knapsack ](src/Dynamic_Programming/Unbounded_Knapsack)
-
-- [4c. Fibonacci Numbers ](src/Dynamic_Programming/Fibonacci_Numbers)
-
-- [4d. Palindromic Subsequence ](src/Dynamic_Programming/Palindromic_Subsequence)
-
-- [4e. Longest Common Sub-String ](src/Dynamic_Programming/Longest_Common_SubString)
+[4. Dynamic Programming ](src/C4Dynamic_Programming)
 
 
-[5. Backtracking ](src/Backtracking)
+- [4a. 0/1 Knapsack ](src/C4Dynamic_Programming/_1_0_Knapsack)
 
-[6. Trie ](src/Trie)
+- [4b. Unbounded Knapsack ](src/C4Dynamic_Programming/Unbounded_Knapsack)
 
-[7. Topological Sort ](src/Topological_Sort)
+- [4c. Fibonacci Numbers ](src/C4Dynamic_Programming/Fibonacci_Numbers)
 
-[8. Union Find (Disjoint-Set Data Structure) ](src/Union_Find)
+- [4d. Palindromic Subsequence ](src/C4Dynamic_Programming/Palindromic_Subsequence)
 
-[9. Ordered Set ](src/Ordered_Set)
+- [4e. Longest Common Sub-String ](src/C4Dynamic_Programming/Longest_Common_SubString)
+
+
+[5. Backtracking ](src/C5Backtracking)
+
+[6. Trie ](src/C6Trie)
+
+[7. Topological Sort ](src/C7Topological_Sort)
+
+[8. Union Find (Disjoint-Set Data Structure) ](src/C8Union_Find)
+
+[9. Ordered Set ](src/C9Ordered_Set)
 
 
 ## 4. Coding Interview Preparation Roadmaps:
@@ -178,11 +178,11 @@ Thought I'd include a list of practice questions under known headings.
 
 7. [Doubly-Linked List (11 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/doubly-linked-list/)
 
-8. [Stack (167 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/stack/)
+8. [A7Stack (167 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/stack/)
 
 9. [Queue (47 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/queue/)
 
-10. [Monotonic Stack (19 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/monotonic-stack/)
+10. [Monotonic A7Stack (19 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/monotonic-stack/)
 
 11. [Monotonic Queue (48 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/monotonic-queue/)
 
@@ -190,23 +190,23 @@ Thought I'd include a list of practice questions under known headings.
 
 13. [Binary Search Tree (40 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/binary-search-tree/)
 
-14. [Graph (159 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/graph/)
+14. [B4Graph (159 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/graph/)
 
-15. [Breadth-First Search (Tree & Graph) (240 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/breadth-first-search/)
+15. [Breadth-First Search (Tree & B4Graph) (240 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/breadth-first-search/)
 
-16. [Depth-First Search (Tree & Graph) (314 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/depth-first-search/)
+16. [Depth-First Search (Tree & B4Graph) (314 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/depth-first-search/)
 
-17. [Heap (Priority Queue) (190 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/heap-priority-queue/)
+17. [B5Heap (Priority Queue) (190 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/heap-priority-queue/)
 
 18. [Greedy (406 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/greedy/)
 
 19. [Binary Search (302 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/binary-search/)
 
-20. [Backtracking (107 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/backtracking/)
+20. [C5Backtracking (107 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/backtracking/)
 
 21. [Dynamic Programming (571 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/dynamic-programming/)
 
-22. [Trie (56 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/trie/)
+22. [C6Trie (56 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/trie/)
 
 23. [Bitmask (49 Questions [Easy, Medium, Hard])](https://leetcode.com/problem-list/bitmask/)
 
