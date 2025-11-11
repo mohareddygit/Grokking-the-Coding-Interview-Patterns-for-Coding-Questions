@@ -1,4 +1,6 @@
 # Blind-75-LeetCode-Questions
+Better NeetCode version (https://neetcode.io/practice?tab=blind75&subpage=practice)
+
 Additional questions https://www.techinterviewhandbook.org/grind75
 
 
