@@ -5,54 +5,54 @@ Additional questions https://www.techinterviewhandbook.org/grind75
 ## Array
 
 - [ ] [1. Two Sum](https://leetcode.com/problems/two-sum/)
-- [ ] [2.Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-- [ ] [3.Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-- [ ] [4.Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-- [ ] [5.Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-- [ ] [6.Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
-- [ ] [7.Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-- [ ] [8.Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-- [ ] [9.3Sum](https://leetcode.com/problems/3sum/)
-- [ ] [10.Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [ ] [2. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+- [ ] [3. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+- [ ] [4. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [ ] [5. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+- [ ] [6. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+- [ ] [7. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [ ] [8. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [ ] [9. 3Sum](https://leetcode.com/problems/3sum/)
+- [ ] [10. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 ---
 
 ## Binary
 
-- [ ] [11.Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
-- [ ] [12.Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
-- [ ] [13.Counting Bits](https://leetcode.com/problems/counting-bits/)
-- [ ] [14.Missing Number](https://leetcode.com/problems/missing-number/)
-- [ ] [15.Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+- [ ] [11. Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
+- [ ] [12. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [ ] [13. Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [ ] [14. Missing Number](https://leetcode.com/problems/missing-number/)
+- [ ] [15. Reverse Bits](https://leetcode.com/problems/reverse-bits/)
 
 ---
 
 ## Dynamic Programming
 
-- [ ] [16.Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
-- [ ] [Coin Change](https://leetcode.com/problems/coin-change/)
-- [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
-- [ ] [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
-- [ ] [Word Break Problem](https://leetcode.com/problems/word-break/)
-- [ ] [Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
-- [ ] [House Robber](https://leetcode.com/problems/house-robber/)
-- [ ] [House Robber II](https://leetcode.com/problems/house-robber-ii/)
-- [ ] [Decode Ways](https://leetcode.com/problems/decode-ways/)
-- [ ] [Unique Paths](https://leetcode.com/problems/unique-paths/)
-- [ ] [Jump Game](https://leetcode.com/problems/jump-game/)
+- [ ] [16. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- [ ] [17. Coin Change](https://leetcode.com/problems/coin-change/)
+- [ ] [18. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+- [ ] [19. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
+- [ ] [20. Word Break Problem](https://leetcode.com/problems/word-break/)
+- [ ] [21. Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
+- [ ] [22. House Robber](https://leetcode.com/problems/house-robber/)
+- [ ] [23. House Robber II](https://leetcode.com/problems/house-robber-ii/)
+- [ ] [24. Decode Ways](https://leetcode.com/problems/decode-ways/)
+- [ ] [25. Unique Paths](https://leetcode.com/problems/unique-paths/)
+- [ ] [26. Jump Game](https://leetcode.com/problems/jump-game/)
 
 ---
 
 ## Graph
 
-- [ ] [Clone Graph](https://leetcode.com/problems/clone-graph/)
-- [ ] [Course Schedule](https://leetcode.com/problems/course-schedule/)
-- [ ] [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
-- [ ] [Number of Islands](https://leetcode.com/problems/number-of-islands/)
-- [ ] [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
-- [ ] [Alien Dictionary (Leetcode Premium)](https://leetcode.com/problems/alien-dictionary/)
-- [ ] [Graph Valid Tree (Leetcode Premium)](https://leetcode.com/problems/graph-valid-tree/)
-- [ ] [Number of Connected Components in an Undirected Graph (Leetcode Premium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
+- [ ] [27. Clone Graph](https://leetcode.com/problems/clone-graph/)
+- [ ] [28. Course Schedule](https://leetcode.com/problems/course-schedule/)
+- [ ] [29. Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+- [ ] [30. Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [ ] [31. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+- [ ] [32. Alien Dictionary (Leetcode Premium)](https://leetcode.com/problems/alien-dictionary/)
+- [ ] [33. Graph Valid Tree (Leetcode Premium)](https://leetcode.com/problems/graph-valid-tree/)
+- [ ] [34. Number of Connected Components in an Undirected Graph (Leetcode Premium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
 ---
 
