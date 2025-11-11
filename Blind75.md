@@ -4,32 +4,32 @@ Additional questions https://www.techinterviewhandbook.org/grind75
 
 ## Array
 
-- [ ] [Two Sum](https://leetcode.com/problems/two-sum/)
-- [ ] [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-- [ ] [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-- [ ] [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-- [ ] [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-- [ ] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
-- [ ] [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-- [ ] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-- [ ] [3Sum](https://leetcode.com/problems/3sum/)
-- [ ] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [ ] [1.Two Sum](https://leetcode.com/problems/two-sum/)
+- [ ] [2.Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+- [ ] [3.Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+- [ ] [4.Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [ ] [5.Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+- [ ] [6.Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+- [ ] [7.Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [ ] [8.Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [ ] [9.3Sum](https://leetcode.com/problems/3sum/)
+- [ ] [10.Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 ---
 
 ## Binary
 
-- [ ] [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
-- [ ] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
-- [ ] [Counting Bits](https://leetcode.com/problems/counting-bits/)
-- [ ] [Missing Number](https://leetcode.com/problems/missing-number/)
-- [ ] [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+- [ ] [11.Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
+- [ ] [12.Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [ ] [13.Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [ ] [14.Missing Number](https://leetcode.com/problems/missing-number/)
+- [ ] [15.Reverse Bits](https://leetcode.com/problems/reverse-bits/)
 
 ---
 
 ## Dynamic Programming
 
-- [ ] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- [ ] [16.Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 - [ ] [Coin Change](https://leetcode.com/problems/coin-change/)
 - [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 - [ ] [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
