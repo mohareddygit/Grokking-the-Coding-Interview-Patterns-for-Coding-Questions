@@ -1,4 +1,4 @@
-package C1Monotonic_Stack;
+package A1Two_Pointers;
 
 //Two pointer approach is more efficient than stack based approach
 //time complexity - O(n) no additional space
