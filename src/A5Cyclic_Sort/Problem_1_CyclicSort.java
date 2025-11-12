@@ -5,13 +5,16 @@ package A5Cyclic_Sort;
 
 public class Problem_1_CyclicSort {
 
-    public int[] sortArray(int[] nums){
+    public int[] sortArray(int[] nums) {
         int i = 0;
-        while (i < nums.length){
+        while (i < nums.length) {
             int j = nums[i] - 1;
             if (nums[i] != nums[j]) {
                 swap(nums, i, j);
             } else {
+                /*
+                This modified condition ensures that a swap only happens if the current element is different from the element it's trying to swap with. If they are the same (duplicates), the algorithm simply increments i to move past the duplicate, thus avoiding the infinite loop and allowing you to find the missing/duplicate numbers by a second pass through the array.
+                 */
                 i++;
             }
         }
