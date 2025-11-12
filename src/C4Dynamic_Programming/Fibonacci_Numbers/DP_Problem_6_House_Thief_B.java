@@ -3,7 +3,7 @@ package C4Dynamic_Programming.Fibonacci_Numbers;
 // Problem Statement: House thief
 // LeetCode Question: 198. House Robber
 
-public class Problem_6_House_Thief {
+public class DP_Problem_6_House_Thief_B {
     // Brute Force Approach
     public int findMaxSteal(int[] wealth) {
         return findMaxStealRecursive(wealth, 0);

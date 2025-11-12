@@ -5,7 +5,7 @@ package A7Stack;
 
 import java.util.Stack;
 
-public class Problem_1_BalancedParentheses {
+public class ST_Problem_1_BalancedParentheses_B {
 
     public boolean isValid(String s){
         Stack<Character> stack = new Stack<>();

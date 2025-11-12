@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Problem_2_Subset_With_Duplicates {
+public class SS_Problem_2_Subset_With_Duplicates_B {
 
     public List<List<Integer>> findSubsets(int[] nums) {
         Arrays.sort(nums);

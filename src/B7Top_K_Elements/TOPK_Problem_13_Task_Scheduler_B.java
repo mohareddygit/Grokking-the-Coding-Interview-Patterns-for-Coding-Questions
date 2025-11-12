@@ -5,7 +5,7 @@ package B7Top_K_Elements;
 
 import java.util.*;
 
-public class Problem_13_Task_Scheduler {
+public class TOPK_Problem_13_Task_Scheduler_B {
     public int scheduleTasks(char[] tasks, int k) {
         int intervalCount = 0;
         Map<Character, Integer> taskFrequencyMap = new HashMap<>();

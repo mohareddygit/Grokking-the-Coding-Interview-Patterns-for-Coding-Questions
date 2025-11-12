@@ -5,11 +5,11 @@ package B7Top_K_Elements;
 
 import java.util.PriorityQueue;
 
-public class Problem_7_Kth_Largest_Number_In_A_Stream {
+public class TOPK_Problem_7_Kth_Largest_Number_In_A_Stream_B {
     PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((n1, n2) -> n1 - n2);
     final int k;
 
-    public Problem_7_Kth_Largest_Number_In_A_Stream(int[] nums, int k) {
+    public TOPK_Problem_7_Kth_Largest_Number_In_A_Stream_B(int[] nums, int k) {
         this.k = k;
         for (int i = 0; i < nums.length; i++)
             add(nums[i]);

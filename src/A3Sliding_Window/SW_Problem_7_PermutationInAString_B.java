@@ -6,7 +6,7 @@ package A3Sliding_Window;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Problem_7_PermutationInAString {
+public class SW_Problem_7_PermutationInAString_B {
     public boolean findPermutation(String str,  String pattern){
         int windowStart = 0, matched = 0;
         Map<Character, Integer> charFrequencyMap = new HashMap<>();

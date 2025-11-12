@@ -3,7 +3,7 @@ package C6Trie;
 // Problem Statement: Extra Characters in a String (medium)
 // LeetCode Question: 2707. Extra Characters in a String
 
-public class Problem_4_Extra_Characters_In_A_String {
+public class Tri_Problem_4_Extra_Characters_In_A_String_B {
 
     class TrieNode {
      TrieNode[] children = new TrieNode[26];

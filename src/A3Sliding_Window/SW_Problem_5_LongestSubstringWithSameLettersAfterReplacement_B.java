@@ -6,7 +6,7 @@ package A3Sliding_Window;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Problem_5_LongestSubstringWithSameLettersAfterReplacement {
+public class SW_Problem_5_LongestSubstringWithSameLettersAfterReplacement_B {
     public int findLength(String string,  int k){
         int windowStart = 0, maxLength = 0, maxRepeatLetterCount = 0;
         Map<Character, Integer> letterFrequencyMap = new HashMap<>();

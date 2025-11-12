@@ -3,7 +3,7 @@ package C5Backtracking;
 // Problem Statement: Word Search (medium)
 // LeetCode Question: 79. Word Search
 
-public class Problem_2_Word_Search {
+public class BK_Problem_2_Word_Search_B {
     public static boolean dfs (char[][] board, String word, int i, int j, int k) {
         if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != word.charAt(k)) {
             return false;

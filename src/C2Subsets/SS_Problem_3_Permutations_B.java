@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class Problem_3_Permutations {
+public class SS_Problem_3_Permutations_B {
     public List<List<Integer>> findPermutations (int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Queue<List<Integer>> permutations = new LinkedList<>();

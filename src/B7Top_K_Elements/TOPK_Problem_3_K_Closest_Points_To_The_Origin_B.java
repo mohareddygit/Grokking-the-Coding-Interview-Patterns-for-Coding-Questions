@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class Problem_3_K_Closest_Points_To_The_Origin {
+public class TOPK_Problem_3_K_Closest_Points_To_The_Origin_B {
     class Point {
         int x;
         int y;

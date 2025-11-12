@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class Problem_9_Right_View_Of_A_Binary_Tree {
+public class BFS_Problem_9_Right_View_Of_A_Binary_Tree_B {
     class TreeNode {
         int val;
         TreeNode left;

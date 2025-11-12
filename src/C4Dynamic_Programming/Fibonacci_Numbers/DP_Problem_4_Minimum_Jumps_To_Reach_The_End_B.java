@@ -3,7 +3,7 @@ package C4Dynamic_Programming.Fibonacci_Numbers;
 // Problem Statement: Minimum jumps to reach the end
 // LeetCode Question:
 
-public class Problem_4_Minimum_Jumps_To_Reach_The_End {
+public class DP_Problem_4_Minimum_Jumps_To_Reach_The_End_B {
     // Brute Force Approach
     public int countMinJumps(int[] jumps) {
         return this.countMinJumpsRecursive(jumps, 0);

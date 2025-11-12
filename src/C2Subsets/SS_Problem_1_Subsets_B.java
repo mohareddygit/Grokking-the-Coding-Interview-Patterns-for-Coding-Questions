@@ -6,7 +6,7 @@ package C2Subsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem_1_Subsets {
+public class SS_Problem_1_Subsets_B {
 
     public List<List<Integer>> findSubset (int[] nums) {
         List<List<Integer>> subsets = new ArrayList<>();

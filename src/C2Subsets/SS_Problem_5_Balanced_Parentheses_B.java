@@ -6,7 +6,7 @@ package C2Subsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem_5_Balanced_Parentheses {
+public class SS_Problem_5_Balanced_Parentheses_B {
 
     public List<String> generateValidParentheses (int num){
         List<String> result = new ArrayList<String>();

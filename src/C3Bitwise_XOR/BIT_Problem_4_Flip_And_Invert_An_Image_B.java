@@ -3,7 +3,7 @@ package C3Bitwise_XOR;
 // Problem Statement: Flip and Invert an Image (hard)
 // LeetCode Question: 832. Flipping an Image
 
-public class Problem_4_Flip_And_Invert_An_Image {
+public class BIT_Problem_4_Flip_And_Invert_An_Image_B {
     public int[][] flipAndInvertImage(int[][] arr) {
         int C = arr[0].length;  // Get the number of columns in the input matrix
         for (int[] row: arr) {  // Iterate through each row in the matrix

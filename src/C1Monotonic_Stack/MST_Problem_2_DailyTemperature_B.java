@@ -5,7 +5,7 @@ package C1Monotonic_Stack;
 
 import java.util.Stack;
 
-public class Problem_2_DailyTemperature {
+public class MST_Problem_2_DailyTemperature_B {
     public int[] dailyTemperatures(int[] temperatures){
         Stack<Integer> stack = new Stack<>();
         int[] res = new int[temperatures.length];
