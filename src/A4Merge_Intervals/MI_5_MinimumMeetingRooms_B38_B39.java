@@ -1,11 +1,12 @@
 package A4Merge_Intervals;
 
 // Problem Statement: Minimum Meeting Rooms (hard)
-// LeetCode Question: 253. Meeting Rooms 11
+// LeetCode Question: 252. Meeting Rooms 1 .. canattend
+// LeetCode Question: 253. Meeting Rooms 11 .. minMeetingRooms
 
 import java.util.*;
 
-public class MI_5_MinimumMeetingRooms_B39 {
+public class MI_5_MinimumMeetingRooms_B38_B39 {
     class Interval {
         int start;
         int end;
@@ -19,6 +20,27 @@ public class MI_5_MinimumMeetingRooms_B39 {
             start = s;
             end = e;
         }
+    }
+
+    public boolean canAttendMeetings(int[][] intervals) {
+        // Sort intervals by start time
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        // Check for overlaps
+        for (int i = 1; i < intervals.length; i++) {
+            // If current meeting starts before previous one ends → overlap
+            if (intervals[i][0] < intervals[i - 1][1]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        MI_5_MinimumMeetingRooms_B38_B39 solver = new MI_5_MinimumMeetingRooms_B38_B39();
+        int[][] intervals = {{0, 30}, {5, 10}, {15, 20}};
+        System.out.println("Can attend all meetings? " + solver.canAttendMeetings(intervals)); // Output: false
     }
 
     /**
