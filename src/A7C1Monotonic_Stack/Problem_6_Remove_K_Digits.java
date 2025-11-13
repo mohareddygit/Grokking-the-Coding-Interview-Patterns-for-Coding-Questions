@@ -1,4 +1,4 @@
-package C1Monotonic_Stack;
+package A7C1Monotonic_Stack;
 
 // Problem Statement: Remove K Digits (hard)
 // LeetCode Question: 402. Remove K Digits

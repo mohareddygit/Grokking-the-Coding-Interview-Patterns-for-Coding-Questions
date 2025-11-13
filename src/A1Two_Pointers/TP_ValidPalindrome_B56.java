@@ -1,6 +1,6 @@
 package A1Two_Pointers;
 
-public class TP_ValidPalindrome_B {
+public class TP_ValidPalindrome_B56 {
     public boolean isPalindrome(String s) {
         int left = 0, right = s.length() - 1;
 
@@ -28,7 +28,7 @@ public class TP_ValidPalindrome_B {
     }
 
     public static void main(String[] args) {
-        TP_ValidPalindrome_B checker = new TP_ValidPalindrome_B();
+        TP_ValidPalindrome_B56 checker = new TP_ValidPalindrome_B56();
         String input = "A man, a plan, a canal: Panama";
         System.out.println("Is valid palindrome? " + checker.isPalindrome(input)); // Output: true
     }

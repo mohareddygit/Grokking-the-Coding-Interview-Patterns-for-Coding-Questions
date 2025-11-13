@@ -22,7 +22,7 @@ package A7Stack;
 
 import java.util.Stack;
 
-public class ST_Problem_1_BalancedParentheses_B {
+public class ST_1_ValidParentheses_B55 {
 
     public boolean isValid(String s) {
         // Use a Stack to keep track of opening brackets

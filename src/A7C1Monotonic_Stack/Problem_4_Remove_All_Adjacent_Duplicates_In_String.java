@@ -1,4 +1,4 @@
-package C1Monotonic_Stack;
+package A7C1Monotonic_Stack;
 
 // Problem Statement: Remove All Adjacent Duplicates In String
 // LeetCode Question: 1047. Remove All Adjacent Duplicates In String

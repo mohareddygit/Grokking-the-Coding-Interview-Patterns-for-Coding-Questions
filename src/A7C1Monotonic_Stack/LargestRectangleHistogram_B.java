@@ -1,4 +1,4 @@
-package C1Monotonic_Stack;
+package A7C1Monotonic_Stack;
 
 import java.util.Stack;
 

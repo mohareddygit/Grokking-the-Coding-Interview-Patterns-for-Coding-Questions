@@ -1,4 +1,4 @@
-package C1Monotonic_Stack;
+package A7C1Monotonic_Stack;
 
 // Problem Statement: Remove Nodes From Linked List (easy)
 // LeetCode Question: 2487. Remove Nodes From Linked List

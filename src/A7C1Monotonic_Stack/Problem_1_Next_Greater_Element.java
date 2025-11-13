@@ -1,4 +1,4 @@
-package C1Monotonic_Stack;
+package A7C1Monotonic_Stack;
 
 // Problem Statement: Next Greater Element (easy)
 // LeetCode Question: 496. Next Greater Element I
