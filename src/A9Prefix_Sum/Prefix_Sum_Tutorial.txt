@@ -1,6 +1,19 @@
 Prefix Sum
 ==========
 
+The prefix sum pattern is extremely useful for finding if any subarray sums to a target k.
+This is because the equation
+Sum(i, j) = P[j] - P[i-1]
+P[j] - P[i-1] = k
+becomes P[i-1] = P[j] - k.
+
+
+The key calculation is:
+java
+int length = i - map.get(currentSum - k);
+
+ length = i - map.get(target_prefix)
+
 - Introduction:
 ===============
 

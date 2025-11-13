@@ -5,28 +5,59 @@ package B7Top_K_Elements;
 
 import java.util.*;
 
+/**
+ * To find the
+ * Top K frequent numbers in Java, the most efficient standard approach (LeetCode 347) uses a combination of a HashMap for frequency counting and a Min-Heap (PriorityQueue) to manage the top K candidates.
+ * Algorithm: HashMap and Min-Heap
+ * The overall time complexity is O(N log K), which is better than O(N log N) (sorting the entire list of frequencies).
+ * Count Frequencies: Use a HashMap to count the occurrences of every number in the input array.
+ * Use a Min-Heap: Initialize a PriorityQueue that sorts based on frequency (smallest frequency at the top). Store pairs of (number, frequency) in the heap.
+ * Populate Heap: Iterate through the frequency map. Add each element to the min-heap. If the heap size exceeds K, remove the element with the smallest frequency (the one at the top).
+ * Extract Results: The heap will contain the K most frequent elements. Extract them into a result array.
+ */
 public class TOPK_5_Top_K_Frequent_Numbers_B75 {
-    public List<Integer> findTopKFrequentNumbers(int[] nums, int k) {
+    public static int[] topKFrequent(int[] nums, int k) {
+        // Step 1: Count Frequencies using a HashMap (O(N) time)
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for (int num : nums) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
 
-        Map<Integer, Integer> numFrequencyMap = new HashMap<>();
-        for (int n : nums)
-            numFrequencyMap.put(n, numFrequencyMap.getOrDefault(n, 0) + 1);
+        // Step 2: Initialize a Min-Heap based on frequency (O(N) space)
+        // The comparator ensures the element with the SMALLEST frequency is at the top (peek)
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(
+                (a, b) -> freqMap.get(a) - freqMap.get(b)
+        );
 
-        PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
-                new PriorityQueue<Map.Entry<Integer, Integer>>(
-                        (e1, e2) -> e1.getValue() - e2.getValue());
-
-        for (Map.Entry<Integer, Integer> entry : numFrequencyMap.entrySet()) {
-            minHeap.add(entry);
+        // Step 3: Populate the heap (O(N log K) time)
+        for (int num : freqMap.keySet()) {
+            minHeap.add(num);
             if (minHeap.size() > k) {
-                minHeap.poll();
+                minHeap.poll(); // Remove the element with the lowest frequency
             }
         }
 
-        List<Integer> topNumbers = new ArrayList<>(k);
-        while (!minHeap.isEmpty()) {
-            topNumbers.add(minHeap.poll().getKey());
+        // Step 4: Extract the results from the heap (O(K log K) time)
+        int[] result = new int[k];
+        for (int i = k - 1; i >= 0; i--) {
+            result[i] = minHeap.poll();
         }
-        return topNumbers;
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        int k = 2;
+        int[] topK = topKFrequent(nums, k);
+
+        System.out.println("Input Array: " + Arrays.toString(nums));
+        System.out.println("Top " + k + " frequent elements: " + Arrays.toString(topK)); // Output: [1, 2]
+
+        int[] nums2 = {1, 2};
+        int k2 = 2;
+        int[] topK2 = topKFrequent(nums2, k2);
+        System.out.println("Top " + k2 + " frequent elements: " + Arrays.toString(topK2)); // Output: [1, 2]
     }
 }
+

@@ -5,32 +5,50 @@ import java.util.Arrays;
 
 public class NextGreaterElement {
 
-    public static int[] findNextGreaterElements(int[] nums) {
+    public static int[] findNGE(int[] nums) {
         int n = nums.length;
-        int[] result = new int[n]; // Array to store the result
-        Stack<Integer> stack = new Stack<>(); // Stack to keep track of indices
+        // Result array initialized to -1 (default for no NGE found)
+        int[] result = new int[n];
+        Arrays.fill(result, -1);
 
-        // Traverse the array from right to left
-        for (int i = n - 1; i >= 0; i--) {
-            // Pop elements from the stack that are less than or equal to current element
-            while (!stack.isEmpty() && stack.peek() <= nums[i]) {
-                stack.pop();
+        // Stack to store indices of elements that haven't found their NGE yet
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < n; i++) {
+            int currentNum = nums[i];
+
+            // While the stack is not empty AND the element at the top index
+            // is smaller than the current number...
+            while (!stack.isEmpty() && nums[stack.peek()] < currentNum) {
+                // ... the current number is the NGE for the element at the top index.
+                int stackIndex = stack.pop();
+                result[stackIndex] = currentNum;
             }
 
-            // If stack is empty, no greater element to the right
-            result[i] = stack.isEmpty() ? -1 : stack.peek();
-
-            // Push current element onto the stack
-            stack.push(nums[i]);
+            // Push the current index onto the stack
+            stack.push(i);
         }
+
+        // Elements remaining in the stack have no greater element to their right,
+        // which is already handled by the initial fill(-1).
 
         return result;
     }
 
     public static void main(String[] args) {
-        int[] nums = {4, 5, 2, 25};
-        int[] result = findNextGreaterElements(nums);
-        System.out.println("Input: " + Arrays.toString(nums));
-        System.out.println("Next Greater Elements: " + Arrays.toString(result));
+        int[] arr = {4, 5, 2, 25};
+        // NGE for 4 is 5
+        // NGE for 5 is 25
+        // NGE for 2 is 25
+        // NGE for 25 is -1
+        int[] ngeResult = findNGE(arr);
+        System.out.println("Array: " + Arrays.toString(arr));
+        System.out.println("NGE:   " + Arrays.toString(ngeResult)); // Output: [5, 25, 25, -1]
+
+        int[] arr2 = {13, 7, 6, 12};
+        int[] ngeResult2 = findNGE(arr2);
+        System.out.println("Array: " + Arrays.toString(arr2));
+        System.out.println("NGE:   " + Arrays.toString(ngeResult2)); // Output: [-1, 12, 12, -1]
     }
 }
+

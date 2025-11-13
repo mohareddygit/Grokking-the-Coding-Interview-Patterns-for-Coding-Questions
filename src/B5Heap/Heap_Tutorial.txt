@@ -1,5 +1,15 @@
 B5Heap
 =====
+PriorityQueue class implements a min-heap by default. To use it as a max-heap, you must provide a custom Comparator during initialization.
+Both implementations have a time complexity of O(log n) for standard offer() (insertion) and poll() (removal of the top element) operations.
+For MaxHeap:
+------------
+ // Initialize with a Comparator to reverse the natural order
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+        // Alternative using lambda expression for custom objects:
+        // PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+
 
 - Introduction:
 ================

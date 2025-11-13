@@ -291,3 +291,24 @@ Sliding Window
         - Termination: The loop continues until we exhaust one of the lists, ensuring the smallest range is found.
 
     This approach efficiently finds the smallest range that includes at least one number from each of the `k` sorted lists.
+
+
+
+1. Sliding Window
+The sliding window approach is efficient for problems involving contiguous subarrays where the elements are typically positive (non-negative).
+Best For: Finding the longest or shortest subarray that meets a condition.
+Key Concept: The two-pointer approach maintains a window that expands from the right and contracts from the left.
+Why it works (with positives): Because all numbers are positive, if the window sum exceeds the target, shrinking the window from the left guarantees the sum will decrease, making the approach monotonic and efficient.
+Java Example Problem:
+Minimum Size Subarray Sum (LeetCode 209)
+2. Prefix Sum
+The prefix sum approach is powerful for any range sum problem, especially those that involve negative numbers or require counting possibilities.
+Best For: Finding the exact count of subarrays with a specific sum, or the maximum length when negatives are present.
+Key Concept: Pre-calculate cumulative sums. Use a HashMap to store previously seen sums and their indices/frequencies to turn O(N²) problems into O(N) lookups.
+Why it works (with negatives): It handles non-monotonic changes in the sum caused by negative numbers by remembering where every sum occurred historically.
+Java Example Problem:
+Subarray Sum Equals K (LeetCode 560)
+Maximum Size Subarray Sum Equals K (LeetCode 325)
+Conclusion
+If you are counting subarrays with a sum k, or if negatives are involved in a length problem, use Prefix Sum + HashMap.
+If you are finding max/min length/sum, and all numbers are positive, the Sliding Window approach is usually faster in practice and requires less space (O(1)).

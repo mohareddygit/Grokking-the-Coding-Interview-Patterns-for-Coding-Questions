@@ -4,24 +4,38 @@ package A6LinkedList_In_Place_Traversal;
 // LeetCode Question: 206. Reverse Linked List
 
 public class LL_1_ReverseALinkedList_B40 {
-    class ListNode {
-        int val = 0;
+    static class ListNode {
+        int val;
         ListNode next;
-        ListNode(int value){
-            this.val = value;
+
+        ListNode(int val) {
+            this.val = val;
         }
     }
 
-    public ListNode reverse (ListNode head) {
+    public static ListNode reverseIterative(ListNode head) {
+        // 'prev' will eventually be the new head of the reversed list
+        ListNode prev = null;
+        // 'current' starts at the head of the original list
         ListNode current = head;
-        ListNode previous = null;
-        ListNode next = null;
+
+        // Iterate through the list until the end is reached
         while (current != null) {
-            next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+            // 1. Save the next node before overwriting the 'next' pointer
+            ListNode nextTemp = current.next;
+
+            // 2. Reverse the current node's 'next' pointer to point to 'prev'
+            current.next = prev;
+
+            // 3. Move 'prev' pointer forward to the current node
+            prev = current;
+
+            // 4. Move 'current' pointer forward to the saved next node
+            current = nextTemp;
         }
-        return previous;
+
+        // 'prev' is the last node of the original list, now the head of the reversed list
+        return prev;
     }
 }
+
