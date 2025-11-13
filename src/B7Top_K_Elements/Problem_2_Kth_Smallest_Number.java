@@ -5,7 +5,10 @@ package B7Top_K_Elements;
 
 /**
  * To find the
- * Kth smallest number in an unsorted array, the most efficient approach for a general case uses a Max-Heap, implemented by the PriorityQueue. This is the same approach used to find the top K smallest elements, but we only need to return the single element at the top of the heap at the end.
+ * Kth smallest number in an unsorted array, the most efficient approach for a general case uses a Max-Heap,
+ * implemented by the PriorityQueue.
+ * This is the same approach used to find the top K smallest elements,
+ * but we only need to return the single element at the top of the heap at the end.
  * Algorithm: Using a Max-Heap
  * We maintain a max-heap of size exactly K. This ensures that the element at the top of the heap is the Kth smallest element encountered so far.
  * Time Complexity: O(N log K), where N is the total number of elements.
