@@ -3,7 +3,7 @@ package C4Dynamic_Programming.Fibonacci_Numbers;
 // Problem Statement: Problem_2_Staircase
 // LeetCode Question: 70. Climbing Stairs
 
-public class DP_2_Staircase_B16 {
+public class DP_2_ClimbingStairs_B16 {
 
     // Brute Force Approach
     public int countWays(int n) {
