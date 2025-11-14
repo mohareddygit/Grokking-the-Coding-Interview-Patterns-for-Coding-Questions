@@ -1,5 +1,10 @@
 Graph
 ======
+AdjacencyListGraph
+```private Map<Integer, List<Integer>> graph```
+
+AdjacencyMatrixGraph 
+```private boolean[][] adjMatrix```
 
 - Introduction:
 ===============
@@ -79,6 +84,39 @@ Graph
 
     Graphs are a versatile data structure used in various domains to model relationships and processes.
     Understanding their properties and implementations is essential for solving many computational problems efficiently.
+
+# DFS vs BFS: Graph Traversal Comparison
+
+This table compares **Depth-First Search (DFS)** and **Breadth-First Search (BFS)** in terms of strategy, use cases, and implementation.
+
+| Feature                     | DFS (Depth-First Search)                                                                                       | BFS (Breadth-First Search)                                                            |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| **Traversal Strategy**      | Go deep before backtracking                                                                                    | Explore neighbors level by level                                                      |
+| **Data Structure Used**     | Stack (explicit or recursion) + Set.. Use a Set to keep track of visited nodes to prevent infinite loops | Queue + Set .. Use Queue to store nodes to be visited (FIFO behavior for depth first) |
+| **Shortest Path**           | ❌ Not guaranteed                                                                                               | ✅ Guaranteed (in unweighted graphs)                                                   |
+| **Memory Usage**            | O(h), where h = depth                                                                                          | O(w), where w = max width                                                             |
+| **Recursive**               | Naturally recursive                                                                                            | Typically iterative                                                                   |
+| **Cycle Detection**         | Can detect with visited set                                                                                    | Can detect with visited set                                                           |
+| **Use Cases**               | Topological sort, maze solving, connected components                                                           | Shortest path, level-order traversal, peer discovery                                  |
+| **Time Complexity**         | O(V + E)                                                                                                       | O(V + E)                                                                              |
+| **Space Complexity**        | O(V)                                                                                                           | O(V)                                                                                  |
+
+---
+
+## DFS Recursive Pseudocode
+
+```java
+void dfs(Graph graph, int node, Set<Integer> visited) {
+    if (visited.contains(node)) return;
+
+    visited.add(node);
+    process(node); // e.g., print or collect
+
+    for (int neighbor : graph.getNeighbors(node)) {
+        dfs(graph, neighbor, visited);
+    }
+}
+```
 
 - Graph ADT (abstract data type):
 =================================
@@ -598,35 +636,4 @@ Graph
       this approach should be efficient enough.
 
 
-# DFS vs BFS: Graph Traversal Comparison
 
-This table compares **Depth-First Search (DFS)** and **Breadth-First Search (BFS)** in terms of strategy, use cases, and implementation.
-
-| Feature                     | DFS (Depth-First Search)                            | BFS (Breadth-First Search)                          |
-|-----------------------------|-----------------------------------------------------|-----------------------------------------------------|
-| **Traversal Strategy**      | Go deep before backtracking                         | Explore neighbors level by level                    |
-| **Data Structure Used**     | Stack (explicit or recursion)                       | Queue                                               |
-| **Shortest Path**           | ❌ Not guaranteed                                    | ✅ Guaranteed (in unweighted graphs)                |
-| **Memory Usage**            | O(h), where h = depth                               | O(w), where w = max width                          |
-| **Recursive**               | Naturally recursive                                 | Typically iterative                                 |
-| **Cycle Detection**         | Can detect with visited set                         | Can detect with visited set                         |
-| **Use Cases**               | Topological sort, maze solving, connected components| Shortest path, level-order traversal, peer discovery|
-| **Time Complexity**         | O(V + E)                                            | O(V + E)                                            |
-| **Space Complexity**        | O(V)                                                | O(V)                                                |
-
----
-
-## DFS Recursive Pseudocode
-
-```java
-void dfs(Graph graph, int node, Set<Integer> visited) {
-    if (visited.contains(node)) return;
-
-    visited.add(node);
-    process(node); // e.g., print or collect
-
-    for (int neighbor : graph.getNeighbors(node)) {
-        dfs(graph, neighbor, visited);
-    }
-}
-```
