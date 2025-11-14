@@ -16,7 +16,7 @@ import java.util.PriorityQueue;
  Advance: If the extracted node has a next node, add that next node into the heap.
  Return: The head of the newly merged list is the answer.
  */
-public class LLKMer_1_Merge_K_Sorted_Lists_B43 {
+public class LLKMer_1_Merge_K_Sorted_Lists_B43_B74 {
 
     /**
      * Definition for singly-linked list.
