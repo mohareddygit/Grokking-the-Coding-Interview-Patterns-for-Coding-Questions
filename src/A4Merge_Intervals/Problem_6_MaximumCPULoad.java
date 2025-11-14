@@ -27,55 +27,54 @@ public class Problem_6_MaximumCPULoad {
         }
     }
 
-    public class MaxCpuLoad {
 
-        public static int findMaxCpuLoad(List<Job> jobs) {
-            if (jobs == null || jobs.isEmpty()) {
-                return 0;
-            }
-
-            // 1. Sort jobs by their start times
-            jobs.sort(Comparator.comparingInt(a -> a.start));
-
-            // 2. Initialize a min-heap to store running jobs, sorted by end time
-            // The top of the heap will be the job that ends earliest
-            PriorityQueue<Job> runningJobs = new PriorityQueue<>(Comparator.comparingInt(a -> a.end));
-
-            int currentCpuLoad = 0;
-            int maxCpuLoad = 0;
-
-            // 3. Iterate through the sorted jobs
-            for (Job currentJob : jobs) {
-
-                // Remove all jobs from the heap that have ended before the current job starts
-                while (!runningJobs.isEmpty() && runningJobs.peek().end <= currentJob.start) {
-                    Job finishedJob = runningJobs.poll();
-                    currentCpuLoad -= finishedJob.cpuLoad;
-                }
-
-                // Add the current job to the heap and update the current load
-                runningJobs.add(currentJob);
-                currentCpuLoad += currentJob.cpuLoad;
-
-                // Update the maximum CPU load encountered so far
-                maxCpuLoad = Math.max(maxCpuLoad, currentCpuLoad);
-            }
-
-            return maxCpuLoad;
+    public static int findMaxCpuLoad(List<Job> jobs) {
+        if (jobs == null || jobs.isEmpty()) {
+            return 0;
         }
 
-        public static void main(String[] args) {
-            List<Job> jobs = Arrays.asList(
-                    new Job(1, 4, 3), // Load 3 from 1 to 4
-                    new Job(2, 5, 4), // Load 4 from 2 to 5
-                    new Job(7, 9, 6), // Load 6 from 7 to 9
-                    new Job(8, 12, 1) // Load 1 from 8 to 12
-            );
+        // 1. Sort jobs by their start times
+        jobs.sort(Comparator.comparingInt(a -> a.start));
 
-            int maxLoad = findMaxCpuLoad(jobs);
-            // Expected max load: 7 (during time interval [2, 4] when jobs A and B overlap)
-            System.out.println("Maximum CPU Load: " + maxLoad);
+        // 2. Initialize a min-heap to store running jobs, sorted by end time
+        // The top of the heap will be the job that ends earliest
+        PriorityQueue<Job> runningJobs = new PriorityQueue<>(Comparator.comparingInt(a -> a.end));
+
+        int currentCpuLoad = 0;
+        int maxCpuLoad = 0;
+
+        // 3. Iterate through the sorted jobs
+        for (Job currentJob : jobs) {
+
+            // Remove all jobs from the heap that have ended before the current job starts
+            while (!runningJobs.isEmpty() && runningJobs.peek().end <= currentJob.start) {
+                Job finishedJob = runningJobs.poll();
+                currentCpuLoad -= finishedJob.cpuLoad;
+            }
+
+            // Add the current job to the heap and update the current load
+            runningJobs.add(currentJob);
+            currentCpuLoad += currentJob.cpuLoad;
+
+            // Update the maximum CPU load encountered so far
+            maxCpuLoad = Math.max(maxCpuLoad, currentCpuLoad);
         }
+
+        return maxCpuLoad;
     }
 
+    public static void main(String[] args) {
+        List<Job> jobs = Arrays.asList(
+                new Job(1, 4, 3), // Load 3 from 1 to 4
+                new Job(2, 5, 4), // Load 4 from 2 to 5
+                new Job(7, 9, 6), // Load 6 from 7 to 9
+                new Job(8, 12, 1) // Load 1 from 8 to 12
+        );
+
+        int maxLoad = findMaxCpuLoad(jobs);
+        // Expected max load: 7 (during time interval [2, 4] when jobs A and B overlap)
+        System.out.println("Maximum CPU Load: " + maxLoad);
+    }
 }
+
+

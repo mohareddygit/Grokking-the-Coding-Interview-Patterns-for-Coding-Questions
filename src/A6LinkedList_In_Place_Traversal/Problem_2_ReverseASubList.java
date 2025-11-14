@@ -71,28 +71,28 @@ public class Problem_2_ReverseASubList {
         return dummy.next; // Return the head of the modified list
     }
 
-    public class Main {
-        public static void main(String[] args) {
-            // List: 1 -> 2 -> 3 -> 4 -> 5 -> null
-            ListNode head = new ListNode(1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(4);
-            head.next.next.next.next = new ListNode(5);
 
-            // Reverse sublist from index 2 to 4 (values 2, 3, 4)
-            // Result expected: 1 -> 4 -> 3 -> 2 -> 5 -> null
-            ListNode newHead = Problem_2_ReverseASubList.reverseBetween(head, 2, 4);
+    public static void main(String[] args) {
+        // List: 1 -> 2 -> 3 -> 4 -> 5 -> null
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
 
-            // Print the resulting list
-            ListNode current = newHead;
-            while (current != null) {
-                System.out.print(current.val + (current.next != null ? " -> " : " -> null"));
-                current = current.next;
-            }
+        // Reverse sublist from index 2 to 4 (values 2, 3, 4)
+        // Result expected: 1 -> 4 -> 3 -> 2 -> 5 -> null
+        ListNode newHead = Problem_2_ReverseASubList.reverseBetween(head, 2, 4);
+
+        // Print the resulting list
+        ListNode current = newHead;
+        while (current != null) {
+            System.out.print(current.val + (current.next != null ? " -> " : " -> null"));
+            current = current.next;
         }
     }
-
 }
+
+
 
 

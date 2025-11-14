@@ -1,4 +1,4 @@
-B4Graph
+Graph
 ======
 
 - Introduction:
@@ -8,27 +8,30 @@ B4Graph
     Graphs are used to represent relationships between entities, where the entities are represented by the nodes
     and the relationships by the edges.
 
-- Components of a B4Graph:
+- Components of a Graph:
 ========================
 
     1. Vertices (Nodes): The fundamental units of a graph. In a graph G = (V, E) , V represents the set of vertices.
     2. Edges: The connections between the vertices. E represents the set of edges. Each edge is a pair of vertices.
 
 - Types of Graphs:
-==================
 
-    1. Directed B4Graph (Digraph): Each edge has a direction, going from one vertex to another.
+![img.png](graphTypes.png)
+
+    1. Directed Graph (Digraph): Each edge has a direction, going from one vertex to another.
         Represented as an ordered pair (u, v), where u is the starting vertex and v is the ending vertex.
-    2. Undirected B4Graph: Edges do not have a direction. An edge is represented as an unordered pair {u, v\},
+    2. Undirected Graph: Edges do not have a direction. An edge is represented as an unordered pair {u, v\},
         meaning the connection is bidirectional.
-    3. Weighted B4Graph: Each edge has an associated weight or cost. Used to represent scenarios like distances, costs, or capacities.
-    4. Unweighted B4Graph: All edges are equal, with no specific weights assigned to them.
+    3. Weighted Graph: Each edge has an associated weight or cost. Used to represent scenarios like distances, costs, or capacities.
+    4. Unweighted Graph: All edges are equal, with no specific weights assigned to them.
 
     - Special Graphs
-    1. Cyclic B4Graph: Contains at least one cycle (a path where the first and last vertices are the same).
-    2. Acyclic B4Graph: Contains no cycles. A directed acyclic graph is called a DAG.
-    3. Connected B4Graph: There is a path between any two vertices in the graph.
-    4. Disconnected B4Graph: At least one pair of vertices does not have a path between them.
+    1. Cyclic Graph: Contains at least one cycle (a path where the first and last vertices are the same).
+    2. Acyclic Graph: Contains no cycles. A directed acyclic graph is called a DAG.
+    3. Connected Graph: There is a path between any two vertices in the graph.
+    4. Disconnected Graph: At least one pair of vertices does not have a path between them.
+    5. Dense Graph: Contains many edges (close to maximum possible).
+    6. Sparse Graph: Contains relatively few edges.
 
 - Representations of Graphs:
 ============================
@@ -47,13 +50,13 @@ B4Graph
     4. Network Topology: Representing connections in computer networks.
     5. Biological Networks: Representing interactions between proteins or genes.
 
-- B4Graph Traversal Algorithms:
+- Graph Traversal Algorithms:
 =============================
 
     1. Depth-First Search (DFS): Explores as far as possible along each branch before backtracking.
     2. Breadth-First Search (BFS): Explores all neighbors at the present depth prior to moving on to nodes at the next depth level.
 
-- Representations of B4Graph:
+- Representations of Graph:
 ===========================
 
   Consider an undirected graph with vertices {A, B, C, D} and edges {(A, B), (A, C), (B, D), (C, D)}.
@@ -77,12 +80,13 @@ B4Graph
     Graphs are a versatile data structure used in various domains to model relationships and processes.
     Understanding their properties and implementations is essential for solving many computational problems efficiently.
 
-- B4Graph ADT (abstract data type):
+- Graph ADT (abstract data type):
 =================================
 
     A graph as an Abstract Data Type (ADT) is a conceptual representation that defines a set of operations for manipulating
     graphs without specifying the underlying implementation. This abstraction allows the focus to be on what operations can
-    be performed on the graph, rather than how they are implemented. Below is a description of the B4Graph ADT, including its operations and properties.
+    be performed on the graph, rather than how they are implemented. Below is a description of the Graph ADT,
+    including its operations and properties.
 
     - Components:
     -------------
@@ -133,7 +137,7 @@ B4Graph
 
     - Implementation:
     -----------------
-        Here's an example implementation of a simple B4Graph ADT in Java using an adjacency list representation.
+        Here's an example implementation of a simple Graph ADT in Java using an adjacency list representation.
         This example includes the essential operations such as adding vertices, adding edges, removing vertices,
         removing edges, and retrieving information about the graph.
 
@@ -298,7 +302,7 @@ B4Graph
             getEdgeWeight: Returns the weight of the edge between two vertices.
             degree: Returns the number of edges connected to a vertex.
 
-    This implementation provides a clear and functional B4Graph ADT in Java, demonstrating the basic operations and how to use them.
+    This implementation provides a clear and functional Graph ADT in Java, demonstrating the basic operations and how to use them.
 
 - Depth-First Search (DFS) Implementation in Java:
 ==================================================
@@ -310,10 +314,10 @@ B4Graph
 
     import java.util.*;
 
-    public class B4Graph {
+    public class Graph {
         private Map<String, List<String>> adjList;
 
-        public B4Graph() {
+        public Graph() {
             adjList = new HashMap<>();
         }
 
@@ -343,7 +347,7 @@ B4Graph
 
         public void dfsIterative(String start) {
             Set<String> visited = new HashSet<>();
-            A7Stack<String> stack = new A7Stack<>();
+            Stack<String> stack = new Stack<>();
             stack.push(start);
 
             while (!stack.isEmpty()) {
@@ -361,7 +365,7 @@ B4Graph
         }
 
         public static void main(String[] args) {
-            B4Graph graph = new B4Graph();
+            Graph graph = new Graph();
             graph.addVertex("A");
             graph.addVertex("B");
             graph.addVertex("C");
@@ -385,7 +389,7 @@ B4Graph
     * Explanation:
     --------------
 
-        B4Graph Class:
+        Graph Class:
             Uses a Map to store the adjacency list, where each key is a vertex and the value is a list of adjacent vertices.
 
         addVertex:
@@ -404,7 +408,7 @@ B4Graph
 
         dfsIterative:
             Performs DFS traversal using an iterative approach with a stack.
-            Uses a Set to keep track of visited vertices and a A7Stack to manage the traversal order.
+            Uses a Set to keep track of visited vertices and a Stack to manage the traversal order.
 
     * Usage Example:
     ----------------
@@ -427,10 +431,10 @@ B4Graph
 
     import java.util.*;
 
-    public class B4Graph {
+    public class Graph {
         private Map<String, List<String>> adjList;
 
-        public B4Graph() {
+        public Graph() {
             adjList = new HashMap<>();
         }
 
@@ -462,7 +466,7 @@ B4Graph
         }
 
         public static void main(String[] args) {
-            B4Graph graph = new B4Graph();
+            Graph graph = new Graph();
             graph.addVertex("A");
             graph.addVertex("B");
             graph.addVertex("C");
@@ -483,7 +487,7 @@ B4Graph
     Explanation:
     ------------
 
-        B4Graph Class:
+        Graph Class:
             Uses a Map to store the adjacency list, where each key is a vertex and the value is a list of adjacent
             vertices.
 
@@ -512,10 +516,10 @@ B4Graph
     This is useful for finding the shortest path on an unweighted graph and for many other applications where breadth-wise
     exploration is required.
 
-- B4Graph Example LeetCode Question: 797. All Paths From Source to Target:
+- Graph Example LeetCode Question: 797. All Paths From Source to Target:
 ========================================================================
 
-    To solve the problem of finding all possible paths from node 0 to node n-1 in a Directed Acyclic B4Graph (DAG),
+    To solve the problem of finding all possible paths from node 0 to node n-1 in a Directed Acyclic Graph (DAG),
     you can use Depth-First Search (DFS). Here, we provide a Java solution and discuss its time and space complexity
     (ChatGPT coded the solution 🤖).
 
@@ -592,3 +596,37 @@ B4Graph
     - This solution effectively finds all paths from the source to the target in a DAG using DFS.
     - The worst-case time and space complexity are exponential due to the nature of the problem, but for typical use cases,
       this approach should be efficient enough.
+
+
+# DFS vs BFS: Graph Traversal Comparison
+
+This table compares **Depth-First Search (DFS)** and **Breadth-First Search (BFS)** in terms of strategy, use cases, and implementation.
+
+| Feature                     | DFS (Depth-First Search)                            | BFS (Breadth-First Search)                          |
+|-----------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Traversal Strategy**      | Go deep before backtracking                         | Explore neighbors level by level                    |
+| **Data Structure Used**     | Stack (explicit or recursion)                       | Queue                                               |
+| **Shortest Path**           | ❌ Not guaranteed                                    | ✅ Guaranteed (in unweighted graphs)                |
+| **Memory Usage**            | O(h), where h = depth                               | O(w), where w = max width                          |
+| **Recursive**               | Naturally recursive                                 | Typically iterative                                 |
+| **Cycle Detection**         | Can detect with visited set                         | Can detect with visited set                         |
+| **Use Cases**               | Topological sort, maze solving, connected components| Shortest path, level-order traversal, peer discovery|
+| **Time Complexity**         | O(V + E)                                            | O(V + E)                                            |
+| **Space Complexity**        | O(V)                                                | O(V)                                                |
+
+---
+
+## DFS Recursive Pseudocode
+
+```java
+void dfs(Graph graph, int node, Set<Integer> visited) {
+    if (visited.contains(node)) return;
+
+    visited.add(node);
+    process(node); // e.g., print or collect
+
+    for (int neighbor : graph.getNeighbors(node)) {
+        dfs(graph, neighbor, visited);
+    }
+}
+```
