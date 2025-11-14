@@ -129,3 +129,31 @@
 
 ## Important Link:
 [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
+
+TODO
+
+BLIND150 / Neet150
+https://neetcode.io/practice?tab=neetcode150&subpage=practice
+
+Binary Search - TimeBasedKeyValueStore
+LinkedList - LRUCache
+Tree
+Heap/Priority queue - Design Twitter
+Backtracking
+Graphs
+AdvancedGraphs
+1D-DP
+2D-DP
+Math&Geometry
+BIT Manipulation
+
+
+
+Blind150/NeetCode150 copied
+Array Hashing
+Two Pointer
+Sliding Window
+stack
+Trie
+Greedy
+Intervals

@@ -4,7 +4,7 @@ package A1Two_Pointers;
 //time complexity - O(n) no additional space
 //with stack time & space complexity are both 0(n) as additional stack space O(n)
 
-public class TP_TrappingRainWater_B {
+public class TP_TrappingRainWater_BX {
     public int trap(int[] height) {
         int left = 0, right = height.length - 1;
         int leftMax = 0, rightMax = 0;
@@ -35,7 +35,7 @@ public class TP_TrappingRainWater_B {
     }
 
     public static void main(String[] args) {
-        TP_TrappingRainWater_B solver = new TP_TrappingRainWater_B();
+        TP_TrappingRainWater_BX solver = new TP_TrappingRainWater_BX();
         int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.println("Trapped Water: " + solver.trap(height)); // Output: 6
     }
