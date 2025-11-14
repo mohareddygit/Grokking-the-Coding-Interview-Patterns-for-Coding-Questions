@@ -1,6 +1,9 @@
 package A1Two_Pointers;
 
-public class TP_ContainerWithMostWater_B {
+/**
+ * 11. Container With Most Water
+ */
+public class TP_ContainerWithMostWater_B10 {
     public int maxArea(int[] height) {
         int left = 0;                  // Start pointer
         int right = height.length - 1; // End pointer
@@ -27,7 +30,7 @@ public class TP_ContainerWithMostWater_B {
     }
 
     public static void main(String[] args) {
-        TP_ContainerWithMostWater_B solver = new TP_ContainerWithMostWater_B();
+        TP_ContainerWithMostWater_B10 solver = new TP_ContainerWithMostWater_B10();
         int[] height = {1,8,6,2,5,4,8,3,7};
         System.out.println("Max Water Container Area: " + solver.maxArea(height)); // Output: 49
     }

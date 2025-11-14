@@ -4,7 +4,7 @@ package A2Fast_And_Slow_Pointers;
  * 19. Remove Nth Node From End of List
  * using the two-pointer technique to achieve a one-pass solution.
  */
-public class RemoveNthNode {
+public class FSP_RemoveNthNode_B44 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0); // Dummy node before head
         dummy.next = head;
