@@ -10,6 +10,22 @@ AdjacencyMatrixGraph
 
 ```private int[][] adjMatrix;```
 
+``` 
+char[][] grid
+int numRows = grid.length;
+grid is an array of arrays (the "outer" array).
+The length property of this outer array tells you how many inner arrays it contains.
+Since each inner array represents a row in the grid, grid.length gives you the total number of rows.
+
+
+int numCols = grid[0].length;
+To find the number of columns, we assume the grid is rectangular (all rows have the same number of elements).
+We access the first row of the grid using grid[0].
+We then apply the length property to this inner array (grid[0].length).
+
+
+```
+
 DFS with Stack + Visited Set: https://www.youtube.com/shorts/ObutqDq53cM
 
 BFS with Queue + Visited Set https://www.youtube.com/shorts/oruJ5Ih9Flg
@@ -157,6 +173,33 @@ void dfs(Graph graph, int node, Set<Integer> visited) {
     }
 }
 ```
+
+# 🌳 Tree vs 🌐 Graph: Data Structure Comparison
+
+This table highlights the key differences between **Trees** and **Graphs** in data structures.
+
+| Feature               | **Tree**                                                                                                                                              | **Graph**                                                                                                                                      |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Definition**        | Trees represent a strict hierarchy (parent-child relationship) with a single starting point (the root). A hierarchical structure with nodes and edges | Graphs represent complex, peer-to-peer networks where any node can connect to any other node. A network of nodes (vertices) connected by edges |
+| **Root Node**         | Has exactly one root node                                                                                                                             | No concept of a root node                                                                                                                      |
+| **Cycles - IMP**      | ❌ No cycles allowed (acyclic). A tree cannot have a path that leads back to itself.                                                                                                                       | ✅ Cycles allowed                                                                                                                               |
+| **Connectivity**      | Always connected                                                                                                                                      | May be connected or disconnected                                                                                                               |
+| **Directionality**    | Typically directed (parent → child)                                                                                                                   | Can be directed or undirected                                                                                                                  |
+| **Edge Count**        | `n - 1` edges for `n` nodes                                                                                                                           | Can have up to `n(n-1)/2` edges (undirected)                                                                                                   |
+| **Traversal Methods** | DFS, BFS, Preorder, Inorder, Postorder                                                                                                                | DFS, BFS                                                                                                                                       |
+| **Use Cases**         | File systems, XML/HTML DOM, decision trees                                                                                                            | Social networks, maps, web links, recommendation systems                                                                                       |
+| **Time Complexity**   | O(n) for traversal                                                                                                                                    | O(V + E) for traversal                                                                                                                         |
+| **Space Complexity**  | O(n) for traversal                                                                                                                                    | O(V) or O(V + E) depending on representation                                                                                                   |
+
+---
+
+## 🧠 Key Insights
+
+- A **tree is a type of graph** — specifically, a **connected acyclic directed graph** with one root and no cycles.
+- **Graphs** are more versatile and can model **bidirectional**, **cyclic**, and **non-hierarchical** relationships.
+- Trees are ideal for **structured data**, while graphs excel in **networked or relational data**.
+
+
 
 - Graph ADT (abstract data type):
 =================================
