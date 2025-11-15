@@ -1,11 +1,18 @@
 Graph
 ======
 AdjacencyListGraph
-```private Map<Integer, List<Integer>> graph```
+```private Map<Integer, List<Integer>> graph;```
+
+```private Map<String, List<String>> graph;```
 
 AdjacencyMatrixGraph 
-```private boolean[][] adjMatrix```
+```private boolean[][] adjMatrix;```
 
+```private int[][] adjMatrix;```
+
+DFS with Stack + Visited Set: https://www.youtube.com/shorts/ObutqDq53cM
+
+BFS with Queue + Visited Set https://www.youtube.com/shorts/oruJ5Ih9Flg
 - Introduction:
 ===============
 
@@ -102,6 +109,39 @@ This table compares **Depth-First Search (DFS)** and **Breadth-First Search (BFS
 | **Space Complexity**        | O(V)                                                                                                           | O(V)                                                                                  |
 
 ---
+## DFS Iterative Pseudocode
+
+```java
+public static void dfsIterative(Map<String, List<String>> graph, String startNode) {
+        // Use a Stack to store nodes to visit (LIFO behavior for depth first)
+        Stack<String> stack = new Stack<>();
+        // Use a Set to keep track of visited nodes to prevent infinite loops
+        Set<String> visited = new HashSet<>();
+
+        // Start the traversal from the given node
+        stack.push(startNode);
+        visited.add(startNode);
+
+        // Continue as long as there are nodes in the stack to explore
+        while (!stack.isEmpty()) {
+        String currentNode = stack.pop();
+        // Process the current node (e.g., print it)
+        System.out.println(currentNode + " ");
+
+        // Get the neighbors of the current node
+        List<String> neighbors = graph.getOrDefault(currentNode, Collections.emptyList());
+
+        // Iterate through neighbors: push unvisited neighbors onto the stack
+        // The order here affects which branch is explored *first*
+        for (String neighbor : neighbors) {
+        if (!visited.contains(neighbor)) {
+        visited.add(neighbor);
+        stack.push(neighbor);
+        }
+        }
+        }
+        }
+```
 
 ## DFS Recursive Pseudocode
 

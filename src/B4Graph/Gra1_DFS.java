@@ -2,7 +2,7 @@ package B4Graph;
 
 import java.util.*;
 
-public class Gra_DFS {
+public class Gra1_DFS {
 
     public static void dfsIterative(Map<String, List<String>> graph, String startNode) {
         // Use a Stack to store nodes to visit (LIFO behavior for depth first)

@@ -14,7 +14,7 @@ import java.util.*;
 /**
  * Both solutions have a time complexity of O(V + E), where V is the number of courses (vertices) and E is the number of prerequisites (edges)
  */
-public class Gra_BFSCourseSchedule_B28 {
+public class Gra3_BFSCourseSchedule_B28 {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // Build the graph (adjacency list) and calculate in-degrees
         List<List<Integer>> adj = new ArrayList<>();
@@ -60,7 +60,7 @@ public class Gra_BFSCourseSchedule_B28 {
 
 
     public static void main(String[] args) {
-        Gra_BFSCourseSchedule_B28 solver = new Gra_BFSCourseSchedule_B28();
+        Gra3_BFSCourseSchedule_B28 solver = new Gra3_BFSCourseSchedule_B28();
         int numCourses = 4;
         int[][] prerequisites = {{1, 0}, {2, 1}, {3, 2}};
         System.out.println("Can finish all courses? " + solver.canFinish(numCourses, prerequisites)); // true

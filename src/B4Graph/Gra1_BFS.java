@@ -2,7 +2,7 @@ package B4Graph;
 
 import java.util.*;
 
-public class Gra_BFS {
+public class Gra1_BFS {
 
     public static void bfs(Map<String, List<String>> graph, String startNode) {
         // Use a Queue to store nodes to visit (FIFO behavior for breadth first)

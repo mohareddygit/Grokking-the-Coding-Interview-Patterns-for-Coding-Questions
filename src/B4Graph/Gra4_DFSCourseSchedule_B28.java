@@ -1,9 +1,7 @@
 package B4Graph;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * 207. Course Schedule
@@ -16,7 +14,7 @@ import java.util.Queue;
  * 1: Visiting (currently in the recursion stack/DFS path)
  * 2: Visited (fully processed and no cycle found in its subtree)
  */
-public class Gra_DFSCourseSchedule_B28 {
+public class Gra4_DFSCourseSchedule_B28 {
     // 0: unvisited, 1: visiting, 2: visited/safe
     private int[] visitStatus;
     private List<List<Integer>> adj;
@@ -62,7 +60,7 @@ public class Gra_DFSCourseSchedule_B28 {
 
 
     public static void main(String[] args) {
-        Gra_DFSCourseSchedule_B28 solver = new Gra_DFSCourseSchedule_B28();
+        Gra4_DFSCourseSchedule_B28 solver = new Gra4_DFSCourseSchedule_B28();
         int numCourses = 4;
         int[][] prerequisites = {{1, 0}, {2, 1}, {3, 2}};
         System.out.println("Can finish all courses? " + solver.canFinish(numCourses, prerequisites)); // true
