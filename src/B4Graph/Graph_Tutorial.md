@@ -198,7 +198,7 @@ This table highlights the key differences between **Trees** and **Graphs** in da
 - A **tree is a type of graph** — specifically, a **connected acyclic directed graph** with one root and no cycles.
 - **Graphs** are more versatile and can model **bidirectional**, **cyclic**, and **non-hierarchical** relationships.
 - Trees are ideal for **structured data**, while graphs excel in **networked or relational data**.
-
+  
 
 
 - Graph ADT (abstract data type):
