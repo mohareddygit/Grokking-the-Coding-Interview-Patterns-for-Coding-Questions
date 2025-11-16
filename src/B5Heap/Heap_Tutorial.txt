@@ -1,4 +1,4 @@
-B5Heap
+Heap
 =====
 PriorityQueue class implements a min-heap by default. To use it as a max-heap, you must provide a custom Comparator during initialization.
 Both implementations have a time complexity of O(log n) for standard offer() (insertion) and poll() (removal of the top element) operations.
@@ -18,16 +18,16 @@ For MaxHeap:
     that for any given node II, the value of II is greater than or equal to the values of its children. In a min heap, the
     value of II is less than or equal to the values of its children.
 
-- B5Heap Properties:
+- Heap Properties:
 ==================
 
         1. Complete Binary Tree:
             A heap is always a complete binary tree, meaning all levels of the tree are fully filled except possibly for the
             last level, which is filled from left to right.
 
-        2. B5Heap Property:
-            Min-B5Heap: The value of each node is less than or equal to the values of its children. The minimum value is at the root.
-            Max-B5Heap: The value of each node is greater than or equal to the values of its children. The maximum value is at the root.
+        2. Heap Property:
+            Min-Heap: The value of each node is less than or equal to the values of its children. The minimum value is at the root.
+            Max-Heap: The value of each node is greater than or equal to the values of its children. The maximum value is at the root.
 
 - Applications of Heaps:
 ========================
@@ -38,7 +38,7 @@ For MaxHeap:
         2. Heapsort:
             An efficient sorting algorithm with O(n log n) time complexity, which uses a heap to sort elements.
 
-        3. B4Graph Algorithms:
+        3. Graph Algorithms:
             Used in algorithms like Dijkstra's shortest path and Prim's minimum spanning tree.
 
         4. Scheduling Algorithms:
@@ -59,12 +59,12 @@ For MaxHeap:
             Return the root element without removing it.
 
         4. Heapify:
-            Process of creating a heap data structure from a binary tree. It is used to create a Min-B5Heap or a Max-B5Heap.
+            Process of creating a heap data structure from a binary tree. It is used to create a Min-Heap or a Max-Heap.
 
 - MAX HEAP:
 ===========
 
-    - Example of Max-B5Heap Operations:
+    - Example of Max-Heap Operations:
     ----------------------------------
 
         * Insertion:
@@ -146,7 +146,7 @@ For MaxHeap:
 
                 public void insert(int element) {
                     if (size >= capacity) {
-                        throw new RuntimeException("B5Heap is full");
+                        throw new RuntimeException("Heap is full");
                     }
                     heap[++size] = element;
                     heapifyUp(size);
@@ -154,7 +154,7 @@ For MaxHeap:
 
                 public int remove() {
                     if (size == 0) {
-                        throw new RuntimeException("B5Heap is empty");
+                        throw new RuntimeException("Heap is empty");
                     }
                     int removedElement = heap[1];
                     heap[1] = heap[size--];
@@ -193,7 +193,7 @@ For MaxHeap:
         * Explanation:
         --------------
 
-            1. B5Heap Array: The heap is represented as an array. The heap array stores the heap elements, capacity is the
+            1. Heap Array: The heap is represented as an array. The heap array stores the heap elements, capacity is the
                 maximum
                 size of the heap, and size is the current number of elements in the heap.
             2. Parent and Child Nodes: Methods parent, leftChild, and rightChild calculate the indices of the parent and
@@ -204,7 +204,7 @@ For MaxHeap:
             5. Insert: Adds a new element to the heap and restores the heap property using heapifyUp.
             6. Remove: Removes and returns the maximum element (root) from the heap and restores the heap property using
                 heapifyDown.
-            7. Print B5Heap: Displays the heap structure.
+            7. Print Heap: Displays the heap structure.
 
         This implementation provides a functional max-heap with basic operations to insert and remove elements while maintaining
         the heap property.
@@ -212,7 +212,7 @@ For MaxHeap:
 - MIN HEAP:
 ===========
 
-    - Example of Min-B5Heap Operations:
+    - Example of Min-Heap Operations:
     ---------------------------------
 
         Here’s a simple explanation of the basic operations in a min-heap:
@@ -294,7 +294,7 @@ For MaxHeap:
 
                 public void insert(int element) {
                     if (size >= capacity) {
-                        throw new RuntimeException("B5Heap is full");
+                        throw new RuntimeException("Heap is full");
                     }
                     heap[++size] = element;
                     heapifyUp(size);
@@ -302,7 +302,7 @@ For MaxHeap:
 
                 public int remove() {
                     if (size == 0) {
-                        throw new RuntimeException("B5Heap is empty");
+                        throw new RuntimeException("Heap is empty");
                     }
                     int removedElement = heap[1];
                     heap[1] = heap[size--];
@@ -340,7 +340,7 @@ For MaxHeap:
     - Explanation:
     --------------
 
-            1. B5Heap Array: The heap is represented as an array. The heap array stores the heap elements, capacity is the maximum
+            1. Heap Array: The heap is represented as an array. The heap array stores the heap elements, capacity is the maximum
                 size of the heap, and size is the current number of elements in the heap.
             2. Parent and Child Nodes: Methods parent, leftChild, and rightChild calculate the indices of the parent and child
                 nodes in the array.
@@ -348,11 +348,11 @@ For MaxHeap:
             4. Heapify Down: The heapifyDown method restores the heap property by moving down from a given position.
             5. Insert: Adds a new element to the heap and restores the heap property using heapifyUp.
             6. Remove: Removes and returns the minimum element (root) from the heap and restores the heap property using heapifyDown.
-            7. Print B5Heap: Displays the heap structure.
+            7. Print Heap: Displays the heap structure.
 
         This implementation demonstrates the core operations of a min-heap, including insertion, removal, and maintaining the heap property.
 
-- B5Heap Example LeetCode Question: 253. Meeting Rooms II
+- Heap Example LeetCode Question: 253. Meeting Rooms II
 ========================================================
 
     To solve the problem of finding the minimum number of conference rooms required given an array of meeting time intervals,
@@ -421,7 +421,7 @@ For MaxHeap:
             in the order they start, which helps in efficiently managing room allocation.
            - Time Complexity: O(n log n), where (n) is the number of intervals.
 
-        2. Min-B5Heap (Priority Queue): A min-heap is used to keep track of the end times of meetings that are currently
+        2. Min-Heap (Priority Queue): A min-heap is used to keep track of the end times of meetings that are currently
             occupying rooms. This allows us to efficiently find the meeting that ends the earliest and decide whether a
             new room is needed or an existing room can be reused.
            - Time Complexity: Adding and removing from the heap takes O( log n) time. Since each meeting is added
