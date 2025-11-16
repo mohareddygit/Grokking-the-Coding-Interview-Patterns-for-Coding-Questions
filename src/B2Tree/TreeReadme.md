@@ -335,5 +335,114 @@ void reverseInorder(TreeNode node) {
 - **Preorder** is useful for saving tree structure.
 - **Postorder** is ideal for safely deleting or freeing trees.
 
+# 🌲 Tree-Based Data Structures Comparison
+
+This guide compares five powerful tree-based data structures used in algorithms, string processing, and spatial indexing.
+
+---
+
+## 📊 Feature Comparison Table
+
+| Feature             | **Heap**                                      | **Segment Tree**                                 | **Trie (Prefix Tree)**                            | **Suffix Tree**                                   | **R-Tree**                                       |
+|---------------------|-----------------------------------------------|--------------------------------------------------|---------------------------------------------------|---------------------------------------------------|--------------------------------------------------|
+| **Primary Use Case**| Priority queue, min/max retrieval             | Range queries and updates on arrays              | Fast prefix-based string search                   | Fast substring search in a single string          | Spatial indexing (e.g., rectangles, GIS)         |
+| **Data Type**       | Numeric values                                | Numeric arrays or intervals                      | Strings                                           | Single string (all suffixes)                      | Geometric objects (rectangles, polygons)         |
+| **Structure**       | Binary tree with heap property                | Binary tree storing aggregate info               | N-ary tree with characters on edges               | Compressed trie of all suffixes                   | Balanced tree with bounding rectangles           |
+| **Ordering Rule**   | Parent ≥ (or ≤) children                      | Segment ranges with merge logic                  | Lexicographic character order                     | Lexicographic suffix order                        | Spatial bounding hierarchy                       |
+| **Query Time**      | O(1) for peek, O(log n) for insert/delete     | O(log n) for range queries                       | O(L), L = length of query                         | O(m), m = pattern length                          | O(log n) for spatial queries                     |
+| **Space Complexity**| O(n)                                          | O(n)                                             | O(N * L), N = number of strings                   | O(n), with suffix links                           | O(n), depends on number of objects and dimensions|
+| **Insertion Time**  | O(log n)                                      | O(log n)                                         | O(L)                                              | O(n)                                              | O(log n)                                          |
+| **Deletion Support**| ✅ Yes                                        | ✅ Yes                                           | ✅ Yes                                             | ❌ Not typical                                     | ✅ Yes                                            |
+| **Examples**        | Dijkstra’s algorithm, scheduling              | Range sum/min/max, histogram queries             | Autocomplete, spell check, IP routing             | DNA search, text editors, plagiarism detection    | GIS systems, spatial databases, collision detection|
+
+---
+
+## 💻 Java Pseudocode Examples
+
+### 🔹 Heap (Min-Heap - Default, MaxHeap)
+Structure: A complete binary tree, where all levels except possibly the last are fully filled, and the last level's nodes are as far left as possible.
+recursively for all subtrees.
+
+Heapify:
+
+![img.png](HeapMinMax.png)
+
+Process of creating a heap data structure from a Array / binary tree. It is used to create a Min-Heap or a Max-Heap
+
+Implementation: Often uses an array for efficient storage and retrieval, rather than explicit tree nodes.
+
+Array Representation (0-indexed)
+
+For a node at index i:
+
+Parent index: floor((i - 1) / 2)
+
+Left child index: 2*i + 1
+
+Right child index: 2*i + 2
+
+insert: Adds a new element and performs a heapify-up (swim) operation to restore the heap property.
+
+delete: 	Removes the root element, replaces it with the last element, and performs a heapify-down (sink) operation to restore the heap property.
+
+```java
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+//PriorityQueue is a minHeap by default
+//PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);   
+minHeap.offer(5);
+minHeap.offer(2);
+int smallest = minHeap.poll(); // returns 2
+```
+
+🔹 Segment Tree (Range Sum)
+
+```java
+int build(int[] arr, int[] tree, int node, int start, int end) {
+if (start == end) return tree[node] = arr[start];
+int mid = (start + end) / 2;
+return tree[node] = build(arr, tree, 2*node, start, mid) +
+build(arr, tree, 2*node+1, mid+1, end);
+}
+```
+
+🔹 Trie (Prefix Tree)
+![img.png](Trie.png)
+```java
+class TrieNode {
+Map<Character, TrieNode> children = new HashMap<>();
+boolean isEndOfWord = false;
+}
+
+void insert(TrieNode root, String word) {
+TrieNode node = root;
+for (char c : word.toCharArray()) {
+node = node.children.computeIfAbsent(c, k -> new TrieNode());
+}
+node.isEndOfWord = true;
+}
+```
+
+🔹 Suffix Tree (Conceptual Build)
+
+```java
+void buildSuffixTrie(String text) {
+TrieNode root = new TrieNode();
+for (int i = 0; i < text.length(); i++) {
+insert(root, text.substring(i));
+}
+}
+```
+
+🔹 R-Tree (Spatial Indexing Concept)
+```java
+class Rectangle {
+int x1, y1, x2, y2; // bounding box
+}
+
+class RTreeNode {
+List<Rectangle> entries;
+List<RTreeNode> children;
+Rectangle boundingBox;
+}
 ```
 
