@@ -1,3 +1,6 @@
+![img.png](DataStructure.png)
+
+![img.png](BigO.png)
 📦 Stack (LIFO)
 ```java
 Deque<Integer> stack = new ArrayDeque<>();
@@ -31,14 +34,47 @@ list.add("A");          // Append
 list.addFirst("B");     // Add to front
 list.removeLast();      // Remove from end
 ```
+Custom Single Linked List
+```java
+public class Node {
+    int data;
+    Node next;
 
+// Constructor
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+```
+
+Custom Double Linked List
+```java
+public class Node {
+    int data;
+    Node next;
+    Node prev;
+
+
+// Constructor
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+```
 🌳 Binary Tree Node - hierarchial, acyclic
 ```java
-class TreeNode {
+class TreeNode { 
+    
 int val;
 TreeNode left, right;
-TreeNode(int val) { this.val = val; }
+TreeNode(int val) {
+    this.val = val; 
+    }
 }
+
 TreeNode root = new TreeNode(1);
 root.left = new TreeNode(2);
 root.right = new TreeNode(3);
@@ -50,12 +86,37 @@ Map<Integer, List<Integer>> graph = new HashMap<>();
 graph.put(1, Arrays.asList(2, 3));
 graph.put(2, Arrays.asList(4));
 graph.put(3, Arrays.asList(4));
+
+//observe get neighbors
+graph.get(1); --> [2,3] are neignbors of 1
+```
+Custom Graph Node
+```java
+import java.util.List;
+import java.util.ArrayList;
+public class GraphNode {
+    int data;
+    List<GraphNode> neighbors;
+    // Constructor
+    public GraphNode(int data) {
+        this.data = data;
+        this.neighbors = new ArrayList<>();
+    }
+    // Add a neighbor
+    public void addNeighbor(GraphNode neighbor) {
+        this.neighbors.add(neighbor);
+    }
+}
 ```
 
 🔺 Heap (Min-Heap)
 ```java
 PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+//PriorityQueue is a minHeap by default
+//PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
 minHeap.offer(5);       // Insert
 int smallest = minHeap.poll(); // Remove min
 int peekMin = minHeap.peek();  // View min
 ```
+
+![img.png](AlgoPatterns.png)
