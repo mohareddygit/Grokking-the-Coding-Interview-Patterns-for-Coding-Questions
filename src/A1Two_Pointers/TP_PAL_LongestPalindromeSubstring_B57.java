@@ -3,7 +3,7 @@ package A1Two_Pointers;
 /**
  * Leetcode 5: Longest Palindromic Substring, using expand-around-center — a simple yet powerful approach.
  */
-public class TP_LongestPalindromeSubstring_B57 {
+public class TP_PAL_LongestPalindromeSubstring_B57 {
 
 
     public String longestPalindrome(String s) {

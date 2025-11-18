@@ -7,20 +7,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SW_5_LongestSubstringWithSameLettersAfterReplacement_B51 {
-    public int findLength(String string,  int k){
-        int windowStart = 0, maxLength = 0, maxRepeatLetterCount = 0;
-        Map<Character, Integer> letterFrequencyMap = new HashMap<>();
-        for (int windowEnd = 0; windowEnd < string.length(); windowEnd++) {
-            char rightChar = string.charAt(windowEnd);
-            letterFrequencyMap.put(rightChar, letterFrequencyMap.getOrDefault(rightChar, 0) + 1);
-            maxRepeatLetterCount = Math.max(maxRepeatLetterCount, letterFrequencyMap.get(rightChar));
-            if (windowEnd - windowStart + 1 - maxRepeatLetterCount > k) {
-                char leftChar = string.charAt(windowStart);
-                letterFrequencyMap.put(leftChar, letterFrequencyMap.get(leftChar) - 1);
-                windowStart++;
+    public int characterReplacement(String s, int k) {
+        int left = 0;
+        int maxf = 0; // Maximum frequency of any character in the current window
+        int maxLength = 0;
+        // Frequency array for 26 uppercase English letters
+        int[] counts = new int[26];
+
+        for (int right = 0; right < s.length(); right++) {
+            char currentChar = s.charAt(right);
+            counts[currentChar - 'A']++;
+            // Update max frequency in the current window
+            maxf = Math.max(maxf, counts[currentChar - 'A']);
+
+            // Check if the current window is invalid (requires more than k replacements)
+            // (right - left + 1) is the current window size
+            while ((right - left + 1) - maxf > k) {
+                char leftChar = s.charAt(left);
+                counts[leftChar - 'A']--;
+                left++; // Shrink the window from the left
+                // Note: We don't necessarily need to recalculate maxf perfectly here to find the final max length,
+                // an optimized approach maintains the largest valid window size found so far.
             }
-            maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+
+            // Update the maximum length of a valid window found so far
+            maxLength = Math.max(maxLength, (right - left + 1));
         }
+
         return maxLength;
     }
 }
