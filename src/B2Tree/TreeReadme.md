@@ -60,16 +60,16 @@ https://www.youtube.com/watch?v=_Dr38nGgpBk
 
 This table compares **Depth-First Search (DFS)** and **Breadth-First Search (BFS)** when applied to tree data structures.
 
-| Feature                   | DFS (Depth-First Search)                            | BFS (Breadth-First Search)                          |
-|---------------------------|-----------------------------------------------------|-----------------------------------------------------|
-| **Traversal Strategy**    | Explore as deep as possible before backtracking     | Explore all nodes at the current depth before going deeper |
-| **Data Structure Used**   | Stack (explicit or recursion)                       | Queue                                               |
-| **Typical Order**         | Preorder, Inorder, Postorder                        | Level-order (left to right by level)                |
-| **Recursive**             | Naturally recursive                                 | Typically iterative                                 |
-| **Memory Usage**          | O(h), where h = height of tree                      | O(w), where w = max width of tree                   |
-| **Use Cases**             | Tree construction, expression evaluation, backtracking | Shortest path in unweighted trees, level-order printing |
-| **Time Complexity**       | O(n)                                                | O(n)                                                |
-| **Space Complexity**      | O(h) (recursion stack)                              | O(w) (queue size)                                   |
+| Feature                   | DFS (Depth-First Search)                                               | BFS (Breadth-First Search)                          |
+|---------------------------|------------------------------------------------------------------------|-----------------------------------------------------|
+| **Traversal Strategy**    | Explore as deep as possible before backtracking                        | Explore all nodes at the current depth before going deeper |
+| **Data Structure Used**   | Stack (explicit or recursion)                                          | Queue                                               |
+| **Typical Order**         | Preorder, Inorder(For BST output is Sorted as Ascendiorder), Postorder | Level-order (left to right by level)                |
+| **Recursive**             | Naturally recursive                                                    | Typically iterative                                 |
+| **Memory Usage**          | O(h), where h = height of tree                                         | O(w), where w = max width of tree                   |
+| **Use Cases**             | Tree construction, expression evaluation, backtracking                 | Shortest path in unweighted trees, level-order printing |
+| **Time Complexity**       | O(n)                                                                   | O(n)                                                |
+| **Space Complexity**      | O(h) (recursion stack)                                                 | O(w) (queue size)                                   |
 
 ---
 
@@ -293,7 +293,7 @@ void preorder(TreeNode node) {
 }
 ```
 
-### Inorder Traversal
+### Inorder Traversal (For BST output is Sorted as Ascendiorder)
 
 ```java
 void inorder(TreeNode node) {

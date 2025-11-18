@@ -3,7 +3,7 @@ package C4Dynamic_Programming.Palindromic_Subsequence;
 // Problem Statement: Longest Palindromic Substring
 // LeetCode Question: 5. Longest Palindromic Substring
 
-public class DP_2_Longest_Palindrome_Substring_B57 {
+public class Problem_2_Longest_Palindrome_Substring {
     // Brute Force Approach
     public int findLPSLength(String st) {
         return findLPSLengthRecursive(st, 0, st.length() - 1);

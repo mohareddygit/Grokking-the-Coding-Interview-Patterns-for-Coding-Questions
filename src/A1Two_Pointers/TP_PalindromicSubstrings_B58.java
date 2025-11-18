@@ -1,10 +1,20 @@
-package C4Dynamic_Programming.Palindromic_Subsequence;
+package A1Two_Pointers;
 
 /**
  * Leetcode 647: Palindromic Substrings, using expand-around-center to count all palindromic substrings.
  *
+ *  We’re looping through each character i in the string, treating it as the center of a potential palindrome.
+ *
+ *  For regular palindrome, you start left at left and right at the extreme right
+ *  compare and then move as left++ and right--
+ *
+ *  For expand-around-center
+ *  1. for odd length, same center
+ *  2. for even length, center, center+1
+ *  3. compare and then move left-- & right++
+ *
  */
-public class DP_PalindromicSubstrings_B58 {
+public class TP_PalindromicSubstrings_B58 {
     public int countSubstrings(String s) {
         int count = 0;
 

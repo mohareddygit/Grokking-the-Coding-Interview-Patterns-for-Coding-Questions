@@ -1,9 +1,9 @@
-package C4Dynamic_Programming.Palindromic_Subsequence;
+package A1Two_Pointers;
 
 // Problem Statement: Palindromic Partitioning
 // LeetCode Question: 131. Palindrome Partitioning
 
-public class DP_5_Palindromic_Partitioning_B58 {
+public class DP_5_Palindromic_Partitioning_BX {
     // Brute Force Approach
     public int findMPPCuts(String st) {
         return this.findMPPCutsRecursive(st, 0, st.length()-1);
