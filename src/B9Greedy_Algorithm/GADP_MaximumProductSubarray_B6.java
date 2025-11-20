@@ -1,23 +1,62 @@
 package B9Greedy_Algorithm;
 
 public class GADP_MaximumProductSubarray_B6 {
+
+    /**
+     *  This is copilot solution - better than Google & Nikhil Lohia
+     *  and also follows/builds upon the kadane algo pattern/formula for maxSubArray
+     *
+     *  maxSum:
+     *  int result = nums[0];
+     *  currentSum = Math.max(nums[i], currentSum + nums[i])
+     *   result/maxSum = Math.max(result/maxSum, currentSum);
+     *
+     *  maxProduct:
+     *  int result = nums[0];
+     *  maxSoFar = Math.max(current, maxSoFar * current);
+     *  minSoFar = Math.min(current, minSoFar * current);
+     *  result = Math.max(result, maxSoFar);
+     *
+     * @param nums
+     * @return
+     */
     public int maxProduct(int[] nums) {
-        int maxProduct = nums[0]; // Global max product
-        int currMax = nums[0];    // Max product ending at current index
-        int currMin = nums[0];    // Min product ending at current index (for negatives)
+        // Initialize with first element
+        int maxSoFar = nums[0];
+        int minSoFar = nums[0];
+        int result = nums[0];
 
+        // Traverse the array
         for (int i = 1; i < nums.length; i++) {
-            int tempMax = currMax;
+            int current = nums[i];
 
-            // Update current max and min considering current number
-            currMax = Math.max(nums[i], Math.max(currMax * nums[i], currMin * nums[i]));
-            currMin = Math.min(nums[i], Math.min(tempMax * nums[i], currMin * nums[i]));
 
-            // Update global max
-            maxProduct = Math.max(maxProduct, currMax);
+            /**
+             * If nums[i] is negative, swap maxSoFar and minSoFar before updating
+             * multiplying by a negative number flips signs:
+             *
+             * A large positive product becomes negative.
+             *
+             * A large negative product becomes positive (and potentially the new maximum).
+             *
+             * So when nums[i] is negative, the roles of maxSoFar and minSoFar switch. That’s why we swap them before updating.
+             */
+            // If current is negative, swap max and min
+            if (current < 0) {
+                int temp = maxSoFar;
+                maxSoFar = minSoFar;
+                minSoFar = temp;
+            }
+
+            // Update max and min products ending at current index
+            maxSoFar = Math.max(current, maxSoFar * current);
+            minSoFar = Math.min(current, minSoFar * current);
+
+            // Update global result
+            result = Math.max(result, maxSoFar);
         }
 
-        return maxProduct;
+        return result;
     }
 
     public static void main(String[] args) {

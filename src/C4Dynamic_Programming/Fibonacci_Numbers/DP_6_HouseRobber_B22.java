@@ -4,6 +4,54 @@ package C4Dynamic_Programming.Fibonacci_Numbers;
 // LeetCode Question: 198. House Robber
 
 public class DP_6_HouseRobber_B22 {
+
+
+    /**
+     * Time: O(n)
+     *
+     * Space: O(n) for DP array, or O(1) for optimized version.
+     * @param nums
+     * @return
+     */
+    // Bottom-up Dynamic Programming Approach
+    public int robDPBottomUp(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        if (nums.length == 1) return nums[0];
+
+        // dp[i] = max money that can be robbed up to house i
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0]; // rob first house
+        dp[1] = Math.max(nums[0], nums[1]); // rob max of first two houses
+
+        // Build solution bottom-up
+        for (int i = 2; i < nums.length; i++) {
+            // Either rob current house + dp[i-2], or skip current house (dp[i-1])
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+
+        return dp[nums.length - 1];
+    }
+
+    // Memory optimization Approach - O(1)
+    public int robDPBottomUpMemOpt(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        if (nums.length == 1) return nums[0];
+
+        int prev1 = Math.max(nums[0], nums[1]); // best up to house 1
+        int prev2 = nums[0];                    // best up to house 0
+        int result = prev1;
+
+        for (int i = 2; i < nums.length; i++) {
+            result = Math.max(prev1, prev2 + nums[i]);
+            prev2 = prev1;
+            prev1 = result;
+        }
+
+        return result;
+    }
+
+
+
     // Brute Force Approach
     public int findMaxSteal(int[] wealth) {
         return findMaxStealRecursive(wealth, 0);
@@ -42,29 +90,5 @@ public class DP_6_HouseRobber_B22 {
         return dp[currentIndex];
     }
 
-    // Bottom-up Dynamic Programming Approach
-    public int findMaxSteal_2(int[] wealth) {
-        if(wealth.length == 0) return 0;
-        int dp[] = new int[wealth.length+1]; // '+1' to handle the zero house
-        dp[0] = 0; // if there are no houses, the thief can't steal anything
-        dp[1] = wealth[0]; // only one house, so the thief have to steal from it
 
-        // please note that dp[] has one extra element to handle zero house
-        for(int i=1; i < wealth.length; i++)
-            dp[i+1] = Math.max(wealth[i] + dp[i-1], dp[i]);
-
-        return dp[wealth.length];
-    }
-
-    // Memory optimization Approach
-    public int findMaxSteal_3(int[] wealth) {
-        if(wealth.length == 0) return 0;
-        int n1=0, n2=wealth[0], temp;
-        for(int i=1; i < wealth.length; i++) {
-            temp = Math.max(n1 + wealth[i], n2);
-            n1 = n2;
-            n2 = temp;
-        }
-        return n2;
-    }
 }

@@ -2,6 +2,7 @@ package C4Dynamic_Programming.Unbounded_Knapsack;
 
 // Problem Statement: Minimum Coin Change
 // LeetCode Question: 322. Coin Change
+// this is a variation of 0/1 knapsack problem without any bounds
 
 import java.util.Arrays;
 
