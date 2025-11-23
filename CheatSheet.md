@@ -111,9 +111,10 @@ public class GraphNode {
 
 Binary Tree & Graph Problems solutions approach:
 
-Recursive solution is concise and intuitive.
+Recursive solution is concise and intuitive. Can result in Stack overflow on very deep trees
 
 Iterative solution avoids recursion stack overflow and is useful for very deep trees. Easy to understand and debug, easy to maintain.
+Iterative can use more memory in wide trees.
 
 Also, if possible prefer to use BreadFirstSearch(LevelOrderTraversal) with queue, for clarity and ease of solution.
 
