@@ -1,6 +1,45 @@
 ![img.png](DataStructure.png)
 
 ![img.png](BigO.png)
+
+🔑  Big O Notation Rule Book
+
+Definition: Big O describes the upper bound of an algorithm’s time or space complexity.
+
+Notation: Written as O(f(n)), where f(n) is the growth rate of operations with input size n.
+
+Focus: Usually worst‑case scenario.
+
+Simplification Rules:
+
+Drop constants: O(2n) → O(n)
+
+Keep the dominant term: O(n^2 + n) → O(n^2)
+
+Ignore lower‑order terms: O(n^3 + n^2) → O(n^3)
+
+Nested loops multiply: Outer loop O(n) × inner loop O(n) → O(n^2)
+
+Recursive calls depend on branching factor:
+
+Binary Search recursion depth O(log n)
+
+Divide‑and‑conquer often O(n log n)
+
+# 📊 Common Growth Rates in Big O Notation
+
+| Complexity | Example Algorithm              | Notes                                |
+|------------|--------------------------------|--------------------------------------|
+| **O(1)**   | Accessing array element        | Constant time                        |
+| **O(log n)** | Binary search                | Shrinks problem size each step       |
+| **O(n)**   | Linear search                  | Scales directly with input           |
+| **O(n log n)** | Merge sort, Quick sort avg | Efficient sorting                    |
+| **O(n^2)** | Bubble sort, nested loops      | Quadratic growth                     |
+| **O(2^n)** | Recursive subset generation    | Exponential growth                   |
+| **O(n!)**  | Traveling salesman brute force | Factorial growth, extremely expensive|
+
+![img.png](BigONotation.png)
+
 📦 Stack (LIFO)
 ```java
 Deque<Integer> stack = new ArrayDeque<>();

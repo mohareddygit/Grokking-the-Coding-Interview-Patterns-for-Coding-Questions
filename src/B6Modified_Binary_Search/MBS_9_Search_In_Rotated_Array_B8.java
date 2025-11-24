@@ -39,6 +39,32 @@ public class MBS_9_Search_In_Rotated_Array_B8 {
             }
 
             // Determine which half is sorted
+            //if (nums[left] <= nums[mid]) {
+            if (nums[mid] > nums[right]) {
+                // Left half is sorted
+                // Check if the target is within the bounds of the sorted left half
+                if (target >= nums[left] && target < nums[mid]) {
+                    right = mid - 1; // Target is in the left half, discard the right half
+                } else {
+                    // Target is in the unsorted right half, discard the left half
+                    left = mid + 1;
+                }
+            } else {
+                // Right half is sorted
+                // Check if the target is within the bounds of the sorted right half
+                if (target > nums[mid] && target <= nums[right]) {
+                    left = mid + 1; // Target is in the right half, discard the left half
+                } else {
+                    // Target is in the unsorted left half, discard the right half
+                    right = mid - 1;
+                }
+            }
+
+
+
+            /*
+            // Determine which half is sorted
+
             if (nums[left] <= nums[mid]) {
                 // Left half is sorted
                 // Check if the target is within the bounds of the sorted left half
@@ -60,6 +86,8 @@ public class MBS_9_Search_In_Rotated_Array_B8 {
                     right = mid - 1;
                 }
             }
+            */
+
         }
 
         return -1; // Target not found
