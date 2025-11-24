@@ -38,6 +38,7 @@ Divide‑and‑conquer often O(n log n)
 | **O(2^n)** | Recursive subset generation    | Exponential growth                   |
 | **O(n!)**  | Traveling salesman brute force | Factorial growth, extremely expensive|
 
+
 ![img.png](BigONotation.png)
 
 📦 Stack (LIFO)
