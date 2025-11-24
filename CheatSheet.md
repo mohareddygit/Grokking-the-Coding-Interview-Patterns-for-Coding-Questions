@@ -39,7 +39,7 @@ Divide‑and‑conquer often O(n log n)
 | **O(n!)**  | Traveling salesman brute force | Factorial growth, extremely expensive|
 
 
-![img.png](BigONotation.png)
+![BigONotation.png](BigONotation.png)
 
 📦 Stack (LIFO)
 ```java
