@@ -3,6 +3,8 @@
 
 [Grind75](https://www.techinterviewhandbook.org/grind75)
 
+https://seanprashad.com/leetcode-patterns/
+
 
 ## Array
 
