@@ -148,6 +148,19 @@ public class GraphNode {
 }
 ```
 
+Binary Tree & Graph Problems solutions approach:
+
+Recursive solution is concise and intuitive. Can result in Stack overflow on very deep trees
+
+Iterative solution avoids recursion stack overflow and is useful for very deep trees. Easy to understand and debug, easy to maintain.
+Iterative can use more memory in wide trees.
+
+Also, if possible prefer to use BreadFirstSearch(LevelOrderTraversal) with queue, for clarity and ease of solution.
+
+For Dynamic programming solutions, some times there will be 2 solutions
+1. with DP array - this array would need additional memory
+2. Memory Optimized solution - without using DP array, use tracking variables of prior steps
+
 🔺 Heap (Min-Heap)
 ```java
 PriorityQueue<Integer> minHeap = new PriorityQueue<>();
