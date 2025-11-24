@@ -1,7 +1,5 @@
 ![img.png](DataStructure.png)
 
-![img.png](BigO.png)
-
 🔑  Big O Notation Rule Book
 
 Definition: Big O describes the upper bound of an algorithm’s time or space complexity.
