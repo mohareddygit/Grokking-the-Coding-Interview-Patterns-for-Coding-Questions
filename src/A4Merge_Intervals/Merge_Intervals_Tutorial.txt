@@ -1,6 +1,40 @@
 Merge Intervals Pattern:
 ========================
 
+// Sort intervals by start time
+Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+
+// Sort by end time ascending
+Arrays.sort(intervals, (a, b) -> Integer.compare(a[1], b[1]));
+Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));
+
+//Arrays.sort(intervals, (a, b) -> a[1] - b[1]); Dangerous
+/*Do not do this. If the values are very large (e.g., 2,000,000,000 and -2,000,000,000),
+the subtraction can overflow and return an incorrect result,
+causing a sorting bug. Always use Integer.compare()
+*/
+
+//Sorting by Multiple Conditions
+If you want to sort by the end time first, but if end times are equal, sort by start time:
+
+// Sort by End Time (index 1), then by Start Time (index 0)
+Arrays.sort(intervals, Comparator.comparingInt((int[] a) -> a[1])
+                                 .thenComparingInt(a -> a[0]));
+//Note: When chaining, you may need to explicitly type the
+first lambda (int[] a) so the Java compiler can correctly
+infer the type for the subsequent .thenComparingInt call.
+
+Arrays.sort(intervals, (a, b) -> {
+    if (a[1] == b[1]) {
+        return Integer.compare(a[0], b[0]);
+    }
+    return Integer.compare(a[1], b[1]);
+});
+
+
+
+
 - Introduction:
 ===============
 

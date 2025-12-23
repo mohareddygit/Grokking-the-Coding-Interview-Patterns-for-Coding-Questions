@@ -3,12 +3,41 @@ package A4Merge_Intervals;
 // Problem Statement: Merge Intervals (medium)
 // LeetCode Question: 56. Merge Intervals
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class MI_1_MergeIntervals_B36 {
+
+    public int[][] merge(int[][] intervals) {
+        if (intervals.length <= 1) return intervals;
+
+        // 1. Sort by start time: O(n log n)
+        //Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        List<int[]> merged = new ArrayList<>();
+        int[] currentInterval = intervals[0];
+        merged.add(currentInterval);
+
+        for (int[] interval : intervals) {
+            int currentEnd = currentInterval[1];
+            int nextStart = interval[0];
+            int nextEnd = interval[1];
+
+            // 2. Check for overlap
+            if (currentEnd >= nextStart) {
+                // Overlap exists: Merge by updating the end to the maximum
+                currentInterval[1] = Math.max(currentEnd, nextEnd);
+            } else {
+                // No overlap: Move to the next interval
+                currentInterval = interval;
+                merged.add(currentInterval);
+            }
+        }
+
+        // 3. Convert List to 2D array
+        //return (int[][]) merged.stream().toArray();
+        return merged.toArray(new int[merged.size()][]);
+    }
 
     class Interval{
         int start;

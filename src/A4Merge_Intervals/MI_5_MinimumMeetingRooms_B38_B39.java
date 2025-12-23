@@ -7,20 +7,7 @@ package A4Merge_Intervals;
 import java.util.*;
 
 public class MI_5_MinimumMeetingRooms_B38_B39 {
-    class Interval {
-        int start;
-        int end;
 
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
-        Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
-    }
 
     public boolean canAttendMeetings(int[][] intervals) {
         // Sort intervals by start time
@@ -41,6 +28,22 @@ public class MI_5_MinimumMeetingRooms_B38_B39 {
         MI_5_MinimumMeetingRooms_B38_B39 solver = new MI_5_MinimumMeetingRooms_B38_B39();
         int[][] intervals = {{0, 30}, {5, 10}, {15, 20}};
         System.out.println("Can attend all meetings? " + solver.canAttendMeetings(intervals)); // Output: false
+    }
+
+
+    class Interval {
+        int start;
+        int end;
+
+        Interval() {
+            start = 0;
+            end = 0;
+        }
+
+        Interval(int s, int e) {
+            start = s;
+            end = e;
+        }
     }
 
     /**
