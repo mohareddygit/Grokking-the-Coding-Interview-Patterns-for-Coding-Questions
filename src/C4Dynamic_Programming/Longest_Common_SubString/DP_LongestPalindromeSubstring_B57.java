@@ -2,6 +2,8 @@ package C4Dynamic_Programming.Longest_Common_SubString;
 
 /**
  * Leetcode 5: Longest Palindromic Substring, using expand-around-center — a simple yet powerful approach.
+ *
+ * dont refer this code, refer the TP_PAL_LongestPalindromeSubstring_B57
  */
 public class DP_LongestPalindromeSubstring_B57 {
     public String longestPalindrome(String s) {

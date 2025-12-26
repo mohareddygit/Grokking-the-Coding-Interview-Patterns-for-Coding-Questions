@@ -36,7 +36,7 @@ public class Gra2_MTNumber_Of_Islands_B30 {
                 if (grid[r][c] == '1') {
                     // Found a new island, increment count and sink the entire island
                     islandCount++;
-                    sinkIsland(grid, r, c, numRows, numCols);
+                    sinkIsland(grid, r, c);
                 }
             }
         }
@@ -44,9 +44,9 @@ public class Gra2_MTNumber_Of_Islands_B30 {
         return islandCount;
     }
 
-    private void sinkIsland(char[][] grid, int r, int c, int numRows, int numCols) {
+    private void sinkIsland(char[][] grid, int r, int c) {
         // Base cases for recursion: out of bounds or water cell
-        if (r < 0 || r >= numRows || c < 0 || c >= numCols || grid[r][c] == '0') {
+        if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] == '0') {
             return;
         }
 
@@ -54,9 +54,9 @@ public class Gra2_MTNumber_Of_Islands_B30 {
         grid[r][c] = '0';
 
         // Recursively call DFS for all 4 adjacent directions (horizontal and vertical)
-        sinkIsland(grid, r + 1, c, numRows, numCols); // Down
-        sinkIsland(grid, r - 1, c, numRows, numCols); // Up
-        sinkIsland(grid, r, c + 1, numRows, numCols); // Right
-        sinkIsland(grid, r, c - 1, numRows, numCols); // Left
+        sinkIsland(grid, r + 1, c); // Down
+        sinkIsland(grid, r - 1, c); // Up
+        sinkIsland(grid, r, c + 1); // Right
+        sinkIsland(grid, r, c - 1); // Left
     }
 }

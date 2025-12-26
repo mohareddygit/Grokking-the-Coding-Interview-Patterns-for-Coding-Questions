@@ -6,6 +6,42 @@ public class SW_BestTimeToBuySellStock_B2 {
      * @param prices
      * @return
      */
+    public int maxProfitCool(int[] prices) {
+        // Safety check: If there are fewer than 2 days, no transaction can occur
+        if (prices == null || prices.length < 2) {
+            return 0;
+        }
+
+        // Initialize 'buy' as the first day's price (our first "valley")
+        int buy = prices[0];
+        // Initialize maxProfit at 0 (if prices only go down, profit stays 0)
+        int maxProfit = 0;
+
+        // Start iterating from the second day (index 1)
+        for (int i = 1; i < prices.length; i++) {
+
+            // SCENARIO 1: Current price is higher than our 'buy' price
+            // This is a potential selling opportunity.
+            if (prices[i] > buy) {
+                // Calculate profit for today and keep the highest one seen so far
+                maxProfit = Math.max(prices[i] - buy, maxProfit);
+            }
+
+            // SCENARIO 2: Current price is lower than or equal to our 'buy' price
+            // We found a new "valley." We should "buy" here instead to
+            // maximize potential profit in future days.
+            else {
+                buy = prices[i];
+            }
+        }
+
+        return maxProfit;
+    }
+
+
+
+
+
     public int maxProfit(int[] prices) {
         int minPrice = Integer.MAX_VALUE; // Track the lowest price seen so far
         int maxProfit = 0;                // Track the maximum profit

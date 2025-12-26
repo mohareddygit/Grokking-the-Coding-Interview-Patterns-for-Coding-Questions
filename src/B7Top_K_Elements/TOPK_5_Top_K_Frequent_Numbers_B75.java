@@ -46,13 +46,16 @@ We need indices up to nums.length (index 3) to store these counts.
 The + 1 ensures we have enough capacity, including the index 0 (which remains empty).
          */
         List<Integer>[] buckets = new ArrayList[nums.length + 1];
-        for (int i = 0; i < buckets.length; i++) {
+        //instead of below loop, just to create empty list first, create the empty list as part of the populate buckets
+        /*for (int i = 0; i < buckets.length; i++) {
             buckets[i] = new ArrayList<>();
-        }
+        }*/
 
         // 3. Populate the buckets
         for (int num : freqMap.keySet()) {
             int frequency = freqMap.get(num);
+            //create empty list first
+            if (buckets[frequency] == null) buckets[frequency] = new ArrayList<>();
             buckets[frequency].add(num);
         }
 

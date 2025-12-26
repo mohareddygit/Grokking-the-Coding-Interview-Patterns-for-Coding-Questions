@@ -3,6 +3,11 @@ package B6Modified_Binary_Search;
 // Problem Statement: Search in Rotated Array (medium)
 // LeetCode Question: 33. Search in Rotated Sorted Array
 
+/*
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+ */
+
 /**
  * Algorithm: Modified Binary Search
  * The time complexity of this approach remains O(log n) because we still discard half of the search space in each step.
@@ -38,7 +43,20 @@ public class MBS_9_Search_In_Rotated_Array_B8 {
                 return mid;
             }
 
-            // Determine which half is sorted
+            //Input: nums = [4,5,6,7,0,1,2], target = 0
+
+            /* Determine which half is sorted
+            Finding the sorted side is essential because binary search only works on sorted data.
+             In a rotated array, the entire range is not sorted, but at any given midpoint,
+             at least one half (either left or right) is guaranteed to be perfectly sorted
+             */
+
+            /*
+            Because the code has already confirmed that nums[mid] is not the target by the time
+             it reaches the range check, testing for target <= nums[mid] is redundant.
+             Using target < nums[mid] is slightly cleaner because we already know they aren't equal.
+             */
+
             //if (nums[left] <= nums[mid]) {
             if (nums[mid] > nums[right]) {
                 // Left half is sorted

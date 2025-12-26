@@ -12,11 +12,16 @@ public class SW_LongestUniqueSubstring_B50 {
         int left = 0; // Start of the window
         int maxLength = 0;
         // rather than hashset use the hashmap approach
+        //With a Set: You use a while loop to shrink the window until it's valid again. This may move left multiple times.
+        //With a Map: You can jump left directly to the necessary position in one step
+        // more efficient for very long strings
+
         /* HashSet<Character> seen = new HashSet<>();
         for (int right = 0; right < s.length(); right++) {
             char current = s.charAt(right);
 
             // Shrink window from the left until no duplicate
+            //s = "abcba"
             while (seen.contains(current)) {
                 seen.remove(s.charAt(left));
                 left++;
@@ -36,6 +41,7 @@ public class SW_LongestUniqueSubstring_B50 {
             // If character seen before, move left pointer
             if (map.containsKey(c)) {
                 // Jump left to one past the last occurrence of c
+                //left = map.get(currentChar) + 1: Dangerous because it can pull the left pointer backward
                 left = Math.max(left, map.get(c) + 1);
             }
 
