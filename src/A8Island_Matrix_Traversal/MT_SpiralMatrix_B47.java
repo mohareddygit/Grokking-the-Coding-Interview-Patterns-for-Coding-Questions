@@ -11,41 +11,39 @@ public class MT_SpiralMatrix_B47 {
         if (matrix == null || matrix.length == 0) return result;
 
         // Define boundaries
-        int rowBegin = 0;
-        int rowEnd = matrix.length - 1;
-        int colBegin = 0;
-        int colEnd = matrix[0].length - 1;
+        int top = 0;
+        int bottom = matrix.length - 1;
+        int left = 0;
+        int right = matrix[0].length - 1;
 
         // Traverse until boundaries overlap
-        while (rowBegin <= rowEnd && colBegin <= colEnd) {
-
-            // Step 1: Traverse from left → right along the top row
-            for (int i = colBegin; i <= colEnd; i++) {
-                result.add(matrix[rowBegin][i]);
+        while (top <= bottom && left <= right) {
+            // 1: Top row : left → right
+            for (int i = left; i <= right; i++) {
+                result.add(matrix[top][i]);
             }
-            rowBegin++; // move boundary down
+            top++; // move boundary down
 
-            // Step 2: Traverse from top → bottom along the right column
-            for (int i = rowBegin; i <= rowEnd; i++) {
-                result.add(matrix[i][colEnd]);
+            // 2: right column: top → bottom
+            for (int i = top; i <= bottom; i++) {
+                result.add(matrix[i][right]);
             }
-            colEnd--; // move boundary left
+            right--; // move boundary left
 
-            // Step 3: Traverse from right → left along the bottom row (if still valid)
-            if (rowBegin <= rowEnd) {
-                for (int i = colEnd; i >= colBegin; i--) {
-                    result.add(matrix[rowEnd][i]);
+            // 3: bottom row (if still valid): right → left
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) {
+                    result.add(matrix[bottom][i]);
                 }
-                rowEnd--; // move boundary up
+                bottom--; // move boundary up
             }
 
-            // Step 4: Traverse from bottom → top along the left column (if still valid)
-
-            if (colBegin <= colEnd) {
-                for (int i = rowEnd; i >= rowBegin; i--) {
-                    result.add(matrix[i][colBegin]);
+            // 4: left column (if still valid) : bottom → top
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) {
+                    result.add(matrix[i][left]);
                 }
-                colBegin++; // move boundary right
+                left++; // move boundary right
             }
         }
 
