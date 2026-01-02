@@ -1,7 +1,13 @@
 package A0CompFAQ;
 
 /**
- * An easy-to-understand alternative for LeetCode 1861 involves a two-step process: first, manually shifting stones as far "down" (right) as possible, and then building the new rotated matrix. Step-by-Step Logic Imagine the box is standing on its side. Before rotating, we process each row to let gravity pull stones to the rightmost available spot. Gravity (Row-by-Row):For each row, start from the rightmost cell and move left.Keep track of the lowestAvailable index (initially the rightmost edge).If you hit a stone (#), "drop" it to the lowestAvailable spot and move that spot one index to the left.If you hit an obstacle (*), it blocks everything, so the next lowestAvailable spot must be just to the left of it.Rotation (New Matrix):Create a new matrix with swapped dimensions (\(n\times m\)).Move each element from box[i][j] to newBox[j][m - 1 - i].
+ * An easy-to-understand alternative for LeetCode 1861 involves a
+ * two-step process: first, manually shifting stones as far "down" (right) as possible,
+ * and then building the new rotated matrix.
+ * Step-by-Step LogicImagine the box is standing on its side.
+ * Before rotating, we process each row to let gravity pull stones to the rightmost available spot. Gravity (Row-by-Row):For each row, start from the rightmost cell and move left.Keep track of the lowestAvailable index (initially the rightmost edge).If you hit a stone (#), "drop" it to the lowestAvailable spot and move that spot one index to the left.If you hit an obstacle (*), it blocks everything, so the next lowestAvailable spot must be just to the left of it.Rotation (New Matrix):Create a new matrix with swapped dimensions (\(n\times m\)).
+ *
+ * Move each element from box[i][j] to newBox[j][m - 1 - i].
  */
 
 
@@ -13,7 +19,7 @@ package A0CompFAQ;
  *
  * If box[i][j] == '.': Just pass by; it doesn't affect the landing pad. 
  */
-class RotateTheBox_LC1861 {
+class CT5_RotateTheBox_LC1861 {
     public char[][] rotateTheBox(char[][] box) {
         int m = box.length;
         int n = box[0].length;

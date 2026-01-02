@@ -1,6 +1,4 @@
-package A0CompFAQ;
-
-import B2Tree_Breadth_First_Search.BS_ValidateBST_B68;
+package A0CompC1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +12,7 @@ import java.util.List;
 /**
  * String Building: The path is passed by value in each recursive call, effectively "saving" the path for each branch without needing explicit backtracking.
  */
-class BinaryTreePaths_LC257 {
+class CT3_BinaryTreePaths_LC257 {
 
     static class TreeNode {
         int val;

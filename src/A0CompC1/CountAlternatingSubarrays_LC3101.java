@@ -1,4 +1,4 @@
-package A0CompFAQ;
+package A0CompC1;
 
 /**
  * The Java solution for LeetCode 3101: Count Alternating Subarrays involves counting the total number of contiguous subarrays where no two adjacent elements are the same.

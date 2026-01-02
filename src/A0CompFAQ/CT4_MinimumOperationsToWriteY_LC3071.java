@@ -7,7 +7,7 @@ package A0CompFAQ;
 /**
  *
  */
-class MinimumOperationsToWriteY_LC3071 {
+class CT4_MinimumOperationsToWriteY_LC3071 {
     public int minimumOperationsToWriteY(int[][] grid) {
         int n = grid.length;
         int mid = n / 2;

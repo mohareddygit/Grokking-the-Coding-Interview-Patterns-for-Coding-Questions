@@ -8,18 +8,23 @@ package A0CompFAQ;
  *
  */
 
+
+
 /**
- * This algorithm uses three pointers: low (for 0s), mid (current element), and high (for 2s)
- * How the Algorithm Works
- * Initialization: Set low and mid to the start of the array and high to the end.
- * Region 0 (Red): Everything to the left of low contains only 0s.
- * Region 1 (White): Everything between low and mid-1 contains only 1s.
- * Region 2 (Blue): Everything to the right of high contains only 2s.
- * Process: The mid pointer traverses the array until it crosses high.
- * When nums[mid] is 2, it is swapped to the end, but since the new value at mid is unknown,
- * the pointer stays put for one more chec
+ * How it Works
+ * Low Pointer (low): Tracks where the next 0 should be placed.
+ * Mid Pointer (mid): Iterates through the array to examine each element.
+ * High Pointer (high): Tracks where the next 2 should be placed.
+ * The Logic:
+ *
+ * When you see a 0, swap it to the front (low) and move both low and mid forward.
+ * When you see a 1, just move mid forward.
+ * When you see a 2, swap it to the back (high) and decrement high.
+ * Do not increment mid yet, as the new value at mid (swapped from the back) could be a 0 or 1
+ * that still needs to be processed.
+ * The mid pointer traverses the array until it crosses high.
  */
-class CT29_SortColors_LC75 {
+class CT29_SortColorsDutchFlag_LC75 {
     public void sortColors(int[] nums) {
         int low = 0;           // Boundary for 0s
         int mid = 0;           // Current element pointer

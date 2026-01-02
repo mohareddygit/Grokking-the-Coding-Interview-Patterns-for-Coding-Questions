@@ -1,4 +1,4 @@
-package A0CompFAQ;
+package A0CompC1;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package A0CompFAQ;
+package A0CompC1;
 
 /**
  * The Java solution for LeetCode 3042: Count Prefix and Suffix Pairs I requires counting index pairs (i, j) where \(i<j\) and words[i] is both a prefix and a suffix of words[j]. Given the small constraints (up to 50 words, each with a maximum length of 10), a straightforward Brute Force (O(n² × m)) approach is efficient enough to pass. Java Implementation The most readable approach uses the built-in startsWith and endsWith methods of the String class

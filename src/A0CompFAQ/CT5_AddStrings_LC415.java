@@ -17,7 +17,7 @@ package A0CompFAQ;
  * Time Complexity: O(max(N, M)), where N and M are the lengths of the two strings. Each digit is visited exactly once.
  * Space Complexity: O(max(N, M)) to store the resulting string in the StringBuilder
  */
-class AddStrings_LC415 {
+class CT5_AddStrings_LC415 {
     public String addStrings(String num1, String num2) {
         StringBuilder result = new StringBuilder();
         int carry = 0;

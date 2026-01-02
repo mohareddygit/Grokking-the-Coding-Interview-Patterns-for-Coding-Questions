@@ -9,6 +9,14 @@ import java.util.List;
  * This implementation uses a StringBuilder to efficiently build strings and a recursive helper function to track the number of open and closed parentheses.
  *
  */
+
+/**
+ * Key Logic & Rules
+ * Keep Track: You must track the current count of open (() and closed ()) parentheses.
+ * Add Open Parentheses: You can add an open parenthesis as long as open < n.
+ * Add Closed Parentheses: You can only add a closed parenthesis if the current number of closed parentheses is less than the current number of open ones (close < open).
+ * Backtracking Step: After each recursive call, the last character added must be removed (deleteCharAt) to explore other possible combinations for that position.
+ */
 class CT39_GenerateParenthesis_LC22 {
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
