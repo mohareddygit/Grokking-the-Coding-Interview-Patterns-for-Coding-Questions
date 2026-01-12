@@ -110,3 +110,46 @@ Summary of the "Shrinking" Step
 1.  **Check:** Is the number of characters to replace greater than 𝑘?
 2.  **Act:** If yes, decrement the count of the character at the `left` pointer and move `left` forward.
 3.  **Result:** The window size decreases, making it more likely to satisfy the `length - maxFreq <= k` rule.
+
+
+Yes, you can absolutely use a  `Map<Character, Integer>`  for better readability. While an  `int[]`  array is significantly faster (often  **10x to 30x faster**  in Java benchmarks) due to direct memory indexing and no hashing overhead, a  `Map`  is often preferred in 2026 for its expressive syntax and flexibility.
+
+Map-based Java Solution
+
+Using a  `Map`  makes the code more intuitive by using clear methods like  `getOrDefault`  and  `put`  instead of ASCII math (like  `-'A'`).
+
+
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+    public int characterReplacement(String s, int k) {
+        Map<Character, Integer> counts = new HashMap<>();
+        int left = 0, maxFreq = 0, maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char current = s.charAt(right);
+            
+            // Increment frequency and update maxFreq
+            counts.put(current, counts.getOrDefault(current, 0) + 1);
+            maxFreq = Math.max(maxFreq, counts.get(current));
+
+            // Window Validity Check: (length - maxFreq) > k
+            while ((right - left + 1) - maxFreq > k) {
+                char leftChar = s.charAt(left);
+                counts.put(leftChar, counts.get(leftChar) - 1);
+                left++;
+                // No need to re-calculate maxFreq for shrinking; 
+                // only an increase in maxFreq can create a new record maxLength.
+            }
+
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+        return maxLength;
+    }
+}
+
+```
+
