@@ -47,168 +47,168 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       <td>Merge Sorted Array</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>2</td>
       <td>Remove Element</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>3</td>
       <td>Remove Duplicates from Sorted Array</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>4</td>
       <td>Remove Duplicates from Sorted Array II</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>5</td>
       <td>Majority Element</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>6</td>
       <td>Rotate Array</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>7</td>
       <td>Best Time to Buy and Sell Stock</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>8</td>
       <td>Best Time to Buy and Sell Stock II</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>9</td>
       <td>Jump Game</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>10</td>
       <td>Jump Game II</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>11</td>
       <td>H-Index</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>12</td>
       <td>Insert Delete GetRandom O(1)</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>13</td>
       <td>Product of Array Except Self</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>14</td>
       <td>Gas Station</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>15</td>
       <td>Candy</td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>16</td>
       <td>Trapping Rain Water</td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>17</td>
       <td>Roman to Integer</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>18</td>
       <td>Integer to Roman</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>19</td>
       <td>Length of Last Word</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>20</td>
       <td>Longest Common Prefix</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>21</td>
       <td>Reverse Words in a String</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>22</td>
       <td>Zigzag Conversion</td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>23</td>
       <td>Find the Index of the First Occurrence in a String</td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>24</td>
       <td>Text Justification</td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -222,7 +222,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>26</td>
@@ -231,7 +231,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>27</td>
@@ -240,7 +240,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>28</td>
@@ -249,7 +249,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>29</td>
@@ -258,7 +258,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -272,7 +272,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>31</td>
@@ -281,7 +281,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>32</td>
@@ -290,7 +290,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>33</td>
@@ -299,7 +299,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -313,7 +313,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>35</td>
@@ -322,7 +322,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>36</td>
@@ -331,7 +331,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>37</td>
@@ -340,7 +340,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>38</td>
@@ -349,7 +349,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -363,7 +363,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>40</td>
@@ -372,7 +372,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>41</td>
@@ -381,7 +381,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>42</td>
@@ -390,7 +390,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>43</td>
@@ -399,7 +399,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>44</td>
@@ -408,7 +408,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>45</td>
@@ -417,7 +417,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>46</td>
@@ -426,7 +426,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>47</td>
@@ -435,7 +435,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -449,7 +449,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>49</td>
@@ -458,7 +458,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>50</td>
@@ -467,7 +467,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>51</td>
@@ -476,7 +476,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -490,7 +490,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>53</td>
@@ -499,7 +499,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>54</td>
@@ -508,7 +508,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>55</td>
@@ -517,7 +517,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>56</td>
@@ -526,7 +526,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -540,7 +540,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>58</td>
@@ -549,7 +549,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>59</td>
@@ -558,7 +558,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>60</td>
@@ -567,7 +567,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>61</td>
@@ -576,7 +576,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>62</td>
@@ -585,7 +585,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Hard</td>
       <td>🔴</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>63</td>
@@ -594,7 +594,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>64</td>
@@ -603,7 +603,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>65</td>
@@ -612,7 +612,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>66</td>
@@ -621,7 +621,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>67</td>
@@ -630,7 +630,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="5" align="center">
@@ -644,7 +644,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>69</td>
@@ -653,7 +653,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>70</td>
@@ -662,7 +662,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>71</td>
@@ -671,7 +671,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Easy</td>
       <td>🟢</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>72</td>
@@ -680,7 +680,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>73</td>
@@ -689,7 +689,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>74</td>
@@ -698,7 +698,7 @@ The Top Interview 150 collection on Leetcode is a curated set of 150 interview q
       </td>
       <td>Medium</td>
       <td>🟡</td>
-      <td>✅</td>
+      <td></td>
     </tr>
     <tr>
       <td>75</td>
