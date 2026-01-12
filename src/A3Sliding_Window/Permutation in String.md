@@ -58,3 +58,54 @@ Complexity Analysis
     
     **, as we use fixed-size arrays of length 26 regardless of input size.
 
+    Frequency Map Solution (Flexible)
+This approach is more readable and handles non-alphabetic characters.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        int n1 = s1.length(), n2 = s2.length();
+        if (n1 > n2) return false;
+
+        Map<Character, Integer> s1Map = new HashMap<>();
+        Map<Character, Integer> s2Map = new HashMap<>();
+
+        // Initialize: Build the first window
+        for (int i = 0; i < n1; i++) {
+            s1Map.put(s1.charAt(i), s1Map.getOrDefault(s1.charAt(i), 0) + 1);
+            s2Map.put(s2.charAt(i), s2Map.getOrDefault(s2.charAt(i), 0) + 1);
+        }
+
+        // Slide: i represents the RIGHT edge
+        for (int i = n1; i < n2; i++) {
+            if (s1Map.equals(s2Map)) return true;
+
+            // Add new character (Right)
+            char rightChar = s2.charAt(i);
+            s2Map.put(rightChar, s2Map.getOrDefault(rightChar, 0) + 1);
+
+            // Remove old character (Left: i - n1)
+            char leftChar = s2.charAt(i - n1);
+            if (s2Map.get(leftChar) == 1) {
+                s2Map.remove(leftChar); // Crucial: Remove key to allow .equals() to work
+            } else {
+                s2Map.put(leftChar, s2Map.get(leftChar) - 1);
+            }
+        }
+
+        return s1Map.equals(s2Map);
+    }
+}
+
+```
+
+
+
+-   **Map Equality:** The `Map.equals()` method in Java is 𝑂(𝐾), where
+    𝐾 is the number of unique characters. Since there are at most 26 unique lowercase English letters, this remains a constant time operation 𝑂(26)
+    
+-   **Key Removal:** It is critical to `remove()` a key when its count hits zero. If you only update the value to `0`, `s1Counts.equals(s2Counts)` may return `false` because one map has a key with value `0` that the other map does not have at all.
+-   **Performance:** While `HashMap` is more flexible, using an `int[26]` array is still significantly faster in Java due to reduced object overhead and direct indexing. Use the `HashMap` approach when readability or diverse character sets (like Unicode) are priorities
