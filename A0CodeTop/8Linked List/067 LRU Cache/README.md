@@ -69,6 +69,7 @@ lRUCache.get(4);    // return 4
 
 ### Solution 💡
 
+![](LRUCache.png)
 
 **LeetCode 146: LRU Cache** in 2026, you must design a system that stores key-value pairs with a fixed capacity. When the cache is full and a new item is added, it must evict the **Least Recently Used (LRU)** item. Both `get` and `put` operations must run in **O(1) average time**.
 
