@@ -112,3 +112,68 @@ class Solution {
 - The space complexity is **O(1)** since no extra space is used, just a few variables to store sums and indices.
 
 You can find the full `Solution.java` file [here](Solution.java).
+
+===========================================
+
+## LeetCode 134: Gas Station 
+you need to find a starting gas station index such that if you start there with an empty tank, you can complete a full circular route without running out of gas at any point. All operations must run in linear time to be efficient.
+
+1. The Idea: Greedy + Total Sum Check
+
+The key insight that enables an 𝑂(𝑛) greedy solution comes from two observations:
+
+1.  **Feasibility Check:** If the **total sum** of all gas available is less than the **total sum** of all cost required to travel, no solution exists. In this case, you immediately return `-1`.
+2.  **Greedy Start:** The only possible starting point is the station where a forward journey begins with a positive tank balance that is never fully depleted afterward.
+
+2. Solution Approach (Greedy One-Pass)
+
+We iterate through the stations once, tracking the current tank level (`current_tank`) and a potential starting point (`start_station`).
+
+-   If the `current_tank` drops below zero at any point `i`, it means the previous `start_station` was invalid.
+-   We reset `start_station` to the next station (`i + 1`) and reset `current_tank` to 0, effectively looking for a new valid starting segment.
+
+
+```java
+class Solution {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int total_gas = 0;
+        int total_cost = 0;
+        int current_tank = 0;
+        int start_station = 0;
+
+        // Pass 1: Check feasibility and run greedy algorithm
+        for (int i = 0; i < gas.length; i++) {
+            total_gas += gas[i];
+            total_cost += cost[i];
+            current_tank += gas[i] - cost[i]; // Net gain/loss at this step
+
+            // If we run out of gas at station 'i' starting from 'start_station'...
+            if (current_tank < 0) {
+                // ... then 'start_station' cannot be the answer.
+                // The next candidate start is the next station 'i + 1'.
+                start_station = i + 1;
+                current_tank = 0; // Reset tank for the new path
+            }
+        }
+
+        // Pass 2: Final feasibility check
+        if (total_gas >= total_cost) {
+            return start_station;
+        } else {
+            return -1; // Not enough gas in total
+        }
+    }
+}
+
+```
+
+4. Complexity Analysis
+
+-   **Time Complexity:** **𝑂(𝑛)**. We iterate through the arrays only once.
+-   **Space Complexity:** **𝑂(1)** We use a few integer variables.
+
+5. Why this is the optimal approach
+
+A brute-force solution that simulates a full loop starting from every possible station would be 𝑂(𝑛2)
+
+. The greedy approach leverages the mathematical properties of the problem to guarantee that the single pass finds the correct starting point (if one exists) in 𝑂(𝑛) time.

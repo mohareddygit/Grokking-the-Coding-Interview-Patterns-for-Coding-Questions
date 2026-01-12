@@ -44,7 +44,24 @@ The majority element always exists in the array.
 
 ### Solution 💡
 
-The time complexity is $O(n)$, and the space complexity is $O(1)$. This approach uses **Boyer-Moore Voting Algorithm**, which efficiently finds the majority element.
+**LeetCode 169: Majority Element** in 2026, the primary goal is to find the element that appears more than ⌊𝑛/2⌋
+
+times in linear time and with minimal extra space.
+
+1. The Core Idea: "Survival of the Fittest"
+
+Because the majority element occurs more than half the time, it will always "outvote" all other elements combined. Even if every non-majority element is used to "cancel out" one instance of the majority element, at least one instance of the majority element will remain at the end.
+
+2. Optimal Approach: Boyer-Moore Voting Algorithm
+
+This is the gold standard for this problem, achieving**𝑂(𝑛)time** and            **𝑂(1)space**
+
+-   **Initialization:** Start with a `candidate` (can be any value) and a `count` set to 0.
+-   **One-Pass Traversal:** Iterate through the array once:
+    -   If `count` is 0, set the current element as the new `candidate` and set `count` to 1.
+    -   If the current element matches the `candidate`, increment `count`.
+    -   If the current element is different, decrement `count`.
+-   **Result:** The final `candidate` is guaranteed to be the majority element because its frequency is strictly greater than all others.
 
 #### Java
 

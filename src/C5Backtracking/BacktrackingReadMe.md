@@ -327,7 +327,83 @@ Summary
 
 The `deleteCharAt` line ensures that each time the recursion "pops" back up to a previous level, the `StringBuilder` is **exactly as it was** before the call, allowing the next branch to start with a clean slate.
 
+==================================================
+
+**LeetCode 39: Combination Sum** can be solved using a logic similar to **LeetCode 322: Coin Change**, as both are variations of the "unbounded knapsack" problem where elements can be reused indefinitely. However, their goals and optimal techniques differ significantly:
+
+1. Key Similarities
+
+-   **Infinite Supply:** Both problems allow you to reuse the same "candidate" or "coin" multiple times to reach a target sum.
+-   **State Transition:** They both involve moving from a larger target toward zero by subtracting the value of a selected element.
+
+2. Major Differences in Approach
+
+While the underlying structure is similar, the required output changes the best approach:
+
+
+
+3. Can you use DP for Combination Sum?
+
+It is possible to solve **Combination Sum** with DP by storing a list of lists at each state (e.g., `dp[i]` contains all combinations that sum to `i`). However, this is generally **not recommended** because:
+
+-   **Memory Overhead:** Storing all full lists in a DP table consumes significantly more memory than a recursive backtracking stack.
+-   **Redundancy:** Backtracking naturally handles the generation of unique paths without the extra step of combining lists at every DP index.
+
+Summary Recommendation
+
+-   Use **Dynamic Programming** for **Coin Change** (322) because you only care about the _best_ answer (minimum coins).
+-   Use **Backtracking** for **Combination Sum** (39) because you need to _show your work_ by listing every valid set of numbers
+
+
+
+**322. Coin Change**
+- Output Type: A single integer (minimum count).
+-Optimal Method: Dynamic Programming (DP): Best for optimization problems where you only need a single value.
+- Complexity: 𝑂(amount×n)  time.
+
+**325. Combination Sum**
+- Output Type: A list of lists (all unique combinations).
+- Optimal Method: Backtracking: Best for enumeration problems where you must explore and store every valid path.
+- Complexity:
+Exponential, as it is limited by the number of unique combinations (up to 150 in LeetCode test cases).
+
+
+```java
+import java.util.*;
+
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), candidates, target, 0);
+        return result;
+    }
+
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList, 
+                           int[] nums, int remain, int start) {
+        if (remain < 0) return; // Base case: exceeded target
+        else if (remain == 0) result.add(new ArrayList<>(tempList)); // Base case: target reached
+        else {
+            for (int i = start; i < nums.length; i++) {
+                tempList.add(nums[i]);
+                // We use 'i' instead of 'i + 1' because we can reuse the same element
+                backtrack(result, tempList, nums, remain - nums[i], i);
+                tempList.remove(tempList.size() - 1); // Backtrack: remove last element
+            }
+        }
+    }
+}
+
+```
+
+Key Differences from your version:
+
+-   **Recursive Exploration:**  Instead of just dividing, it subtracts one candidate at a time and calls itself to find what's needed for the  _new_  remainder.
+-   **The  `start`  Parameter:**  This prevents duplicate combinations (like  `[2, 2, 3]`  and  `[3, 2, 2]`) by ensuring the algorithm only looks at current or future elements in the array.
+-   **Memory Efficiency:**  It uses a single  `tempList`  that it modifies and restores ("backtracks") rather than creating new lists constantly
+
+
 ========================================
+
 To solve the
 
 **N-Queens** problem using the backtracking template, we place queens row by row. At each row, we iterate through all columns and check if placing a queen is safe.

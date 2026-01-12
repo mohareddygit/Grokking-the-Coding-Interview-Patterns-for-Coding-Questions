@@ -61,16 +61,58 @@ minStack.getMin();    // return -2
 
 ### Solution 💡
 
-To achieve `O(1)` time complexity for all operations, we can use **two stacks**:
+The Mechanism
+We use two stacks:
+- stack: Stores every value pushed.
+- minStack: Stores the minimum value encountered at that specific level of the stack
 
-1. **Primary stack** to store all elements.
-2. **Min stack** to keep track of the minimum value at each level of the stack.
-
-For every `push`, we add the value to the primary stack, and update the min stack with the current minimum value. For `pop`, we remove from both stacks.
-
+The space-optimized version of the Two-Stack Approach improves memory usage by only pushing to the minStack when the minimum actually changes or is duplicated.
+1. Core Logic
+   Instead of pushing a value to both stacks every time, you use conditional logic:
+   - Push: Add the value to the minStack only if it is less than or equal to the current top of the minStack.
+   - Pop: Remove the top of the minStack only if the value being popped from the mainStack is equal to the current minimum.
 ---
 
+Why this is Optimized
+In a standard approach, if you push 1,000 elements that are all larger than the current minimum, your minStack still grows to 1,000 elements. In the optimized version, the minStack size stays at 1, significantly reducing auxiliary space in many real-world scenarios
+
+```java
+class MinStack {
+    private Stack<Integer> stack = new Stack<>();
+    private Stack<Integer> minStack = new Stack<>();
+
+    public void push(int val) {
+        stack.push(val);
+        // Only push to minStack if it's empty or val is new minimum
+        if (minStack.isEmpty() || val <= minStack.peek()) {
+            minStack.push(val);
+        }
+    }
+
+    public void pop() {
+        // Only pop from minStack if the value being removed is the current minimum
+        // Note: Use .equals() for objects like Integer in Java to avoid reference comparison issues
+        if (stack.pop().equals(minStack.peek())) {
+            minStack.pop();
+        }
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int getMin() {
+        return minStack.peek();
+    }
+}
+```
+
 #### Java Solution
+
+Two Parallel Stacks (Recommended for Interviews)
+- Structure: Maintain two separate stacks: a mainStack for all values and a minStack to track the minimums.
+- Push: Push the value onto mainStack. For minStack, push the smaller of the new value or the current top of minStack.
+- Pop: Pop from both stacks simultaneously to keep them synchronized.
 
 ```java
 class MinStack {

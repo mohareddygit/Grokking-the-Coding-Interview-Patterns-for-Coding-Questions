@@ -1,20 +1,18 @@
-
-
 class Solution {
     public int removeElement(int[] nums, int val) {
-        int k = 0; // `k` is the index for the position of the next valid element in the array
+        int i = 0; // The "Writer" pointer
 
-        // Iterate through each element in the 'nums' array
-        for (int i = 0; i < nums.length; i++){
-            if (nums[i] != val){
-
-                // assign the value of 'nums[1] to nums[k]'
-                // this effectively moves valid elements to the beginning of the array
-                nums[k++] = nums[i];
+        for (int j = 0; j < nums.length; j++) { // The "Reader" pointer
+            // If the current element is NOT the one we want to remove
+            if (nums[j] != val) {
+                // Move it to the 'i-th' position
+                nums[i] = nums[j];
+                // Increment i to prepare for the next valid element
+                i++;
             }
         }
 
-        // return the number of valid element in the array (excluding elements equal to 'val')
-        return k;
+        // i is the count of elements that are not equal to val
+        return i;
     }
 }
