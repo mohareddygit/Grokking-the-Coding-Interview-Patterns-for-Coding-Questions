@@ -1,6 +1,44 @@
 C5Backtracking
 ============
 
+1.Permutations:
+  backtrackPermute(results, new ArrayList<>(), nums, new boolean[nums.length]);
+  BC: current.size() == nums.length ...
+  for (int i = 0; i < nums.length; i++)
+2.Subsets:
+backtrackSubsets(results, new ArrayList<>(), nums, 0); ... start from 0
+BC:(subset/superset)add always....  ..
+for (int i = start; i < nums.length; i++)
+3.Combinations [1,n]:
+ backtrackCombine(results, new ArrayList<>(), 1, n, k); ... start from 1
+BC:currentPath.size() == k
+for (int i = start; i <= n; i++)
+
+To master backtracking, you should follow a curriculum that builds from basic
+"include/exclude" logic to complex constraint satisfaction.
+This logical order ensures you internalize the core template before applying it to high-stakes interview problems.
+
+Phase 1: Foundations (Include/Exclude Pattern)
+Start with problems where the decision tree has only two branches at each step: "Should I include this element or skip it?"
+Subsets: The most fundamental problem. It teaches you how to manage a "path" variable and when to append/pop.
+Combination Sum: Builds on Subsets but adds a base case based on a target sum rather than just the end of the array.
+Palindrome Partitioning: Introduces a validation step (is it a palindrome?) before deciding to recurse further.
+
+Phase 2: Permutations (The Swap/Used Pattern)
+Transition to problems where the decision tree branches multiple times based on the remaining available elements.
+4. Permutations: Teaches you how to explore every possible ordering. You will learn to use a visited array or swapping to track "used" elements.
+5. Permutations II: A critical lesson in deduplication—handling input arrays with duplicate numbers.
+
+Phase 3: 2D Grid Exploration (Matrix DFS)
+Apply backtracking to move through a grid in four directions (up, down, left, right).
+6. Word Search: Introduces "in-place" backtracking by marking cells as visited (e.g., using a special character) and then unmarking them after the recursive call.
+7. Rat in a Maze: A classic pathfinding problem that reinforces the "Choice-Explore-Undo" loop in a 2D space.
+
+Phase 4: Advanced Constraint Satisfaction
+Solve problems where "pruning" becomes essential because the search space is too vast for simple brute force.
+8. N-Queens: The gold standard for learning complex pruning (checking if any queen is under attack horizontally, vertically, or diagonally).
+9. Sudoku Solver: The final boss of basic backtracking. It combines 2D navigation with strict rules for rows, columns, and 3x3 blocks
+
 - Introduction:
 ===============
 
@@ -20,7 +58,7 @@ C5Backtracking
         3. Abandonment and Backtrack:
            - If the current partial solution violates constraints or cannot lead to a complete solution, the algorithm abandons this partial solution and backtracks to the previous step to try a different option.
 
-    * How C5Backtracking Works:
+    * How Backtracking Works:
     -------------------------
 
         1. Start from an initial partial solution.
@@ -45,7 +83,7 @@ C5Backtracking
         3. Knapsack Problem:
            - Select items with given weights and values to maximize the total value without exceeding the weight capacity.
 
-        4. B4Graph Coloring:
+        4. Graph Coloring:
            - Assign colors to the vertices of a graph so that no two adjacent vertices share the same color using the minimum number of colors.
 
     * Advantages and Disadvantages:
@@ -61,7 +99,7 @@ C5Backtracking
         - Can be inefficient for large problems due to its exhaustive nature.
         - May require optimization techniques like pruning to be practical for larger problems.
 
-        C5Backtracking is a powerful technique, especially when combined with strategies like constraint propagation and
+        Backtracking is a powerful technique, especially when combined with strategies like constraint propagation and
         heuristics to reduce the search space and improve efficiency.
 
 - C5Backtracking Algorithm Pseudocode:
@@ -119,7 +157,7 @@ C5Backtracking
 
     Here is the step-by-step approach to solve this problem (ChatGPT coded the solution 🤖):
 
-        1. C5Backtracking: We use a backtracking approach to explore all possible combinations.
+        1. Backtracking: We use a backtracking approach to explore all possible combinations.
         2. Sorting: To facilitate pruning the search tree (early termination), we sort the input list.
         3. Avoid duplicates: By iterating over the sorted list and always continuing from the current position,
             we avoid using the same element combination in a different order.

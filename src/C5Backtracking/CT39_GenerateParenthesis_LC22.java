@@ -1,4 +1,4 @@
-package A0CompFAQ;
+package C5Backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,5 +56,10 @@ class CT39_GenerateParenthesis_LC22 {
             backtrack(result, current, open, close + 1, max);
             current.deleteCharAt(current.length() - 1); // Backtrack
         }
+    }
+
+    public static void main(String[] args){
+        CT39_GenerateParenthesis_LC22 CT39_GenerateParenthesis_LC22 = new CT39_GenerateParenthesis_LC22();
+        System.out.println(CT39_GenerateParenthesis_LC22.generateParenthesis(3));
     }
 }
