@@ -12,6 +12,13 @@ package A1Two_Pointers;
  * 1. for odd length, same center
  * 2. for even length, center, center+1
  * 3. compare and then move left-- & right++
+
+
+
+ Key Notes for the Java Implementation
+String Boundaries: Unlike some languages, Java's String.charAt() will throw a StringIndexOutOfBoundsException if you aren't careful. The while loop condition left >= 0 && right < s.length() ensures you stay within bounds.
+Counting vs. Finding: This specific problem (LeetCode 647) asks for the count of substrings. If you were solving "Longest Palindromic Substring" (LeetCode 5), you would instead track the max length and starting index.
+Helper Method: Using a private helper method like expandFromCenter keeps the code clean and prevents you from repeating the expansion logic for both odd and even cases
  */
 public class TP_PAL_PalindromicSubstrings_B58 {
     public int countSubstrings(String s) {
