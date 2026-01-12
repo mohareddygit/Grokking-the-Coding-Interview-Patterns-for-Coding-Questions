@@ -1,7 +1,8 @@
 LeetCode 78: Subsets in Java, the standard approach is to use a recursive backtracking helper function that builds paths through a decision tree. 
 Java Implementation This solution uses the ArrayList class to manage the results and the current path. 
 
-```
+```java
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,9 +65,9 @@ Unlike the Subsets problem where we only look forward, for Permutations we need 
 
 **Easy-to-Understand Java Solution**
 
-java
 
-```
+
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,9 +146,9 @@ requires finding all possible sets of 𝑘 numbers from the range  [1,n]
 
 To solve this efficiently, we use a `start` index to ensure we only pick numbers in increasing order, which naturally prevents duplicate sets.
 
-java
 
-```
+
+```java
 import java.util.ArrayList;
 import java.util.List;
 
