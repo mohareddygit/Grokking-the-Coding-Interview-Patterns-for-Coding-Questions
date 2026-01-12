@@ -138,6 +138,51 @@ In algorithms, **Matrix** refers to a two-dimensional array, often used to solve
 
 Matrix problems are an essential part of algorithm learning, and solving them requires using a combination of different methods and strategies, such as in-place operations, traversal, search algorithms, dynamic programming, and space optimization.
 
-Practice solving matrix problems to improve your problem-solving skills!
+1. **Matrix Rotations** (LeetCode 48: Rotate Image)
 
-Happy coding and good luck with your matrix problems! 💻🎉
+To rotate a matrix 90 degrees clockwise **in-place**, you use a two-step geometric transformation.
+
+-   **The Formula:** `Transpose` + `Reflect (Reverse Rows)`
+  1.  **Transpose:** Swap element at `[i][j]` with `[j][i]`. This turns rows into columns.
+  2.  **Reverse Rows:** For each row, reverse the elements (swap `[i][j]` with `[i][n-1-j]`).
+-   **Alternative (Counter-Clockwise):** Transpose, then **Reverse Columns**.
+
+2. Spiral Traversal (LeetCode 54: Spiral Matrix)
+
+Spiral problems are about **Boundary Contraction**. Instead of complex math, you maintain four boundary variables that "shrink" the search space.
+
+-   **The Variables:** `top`, `bottom`, `left`, `right`.
+-   **The Logic:**
+  1.  Move **Right**: From `left` to `right`, then increment `top`.
+  2.  Move **Down**: From `top` to `bottom`, then decrement `right`.
+  3.  Move **Left**: From `right` to `left`, then decrement `bottom`.
+  4.  Move **Up**: From `bottom` to `top`, then increment `left`.
+-   **Crucial Tip:** Always check `if (top <= bottom && left <= right)` after each boundary update to prevent duplicate processing.
+
+3. Boundary/In-Place Mapping (LeetCode 73: Set Matrix Zeroes)
+
+To mark an entire row/column as zero in 𝑂(1) space, use the **First Row and First Column** as your "storage indicators."
+
+-   **The Strategy:**
+  1.  Use `matrix[i][0]` and `matrix[0][j]` to record if row `i` or column `j` should be zeroed.
+  2.  Use two boolean variables to track if the _original_ first row/column themselves need to be zeroed.
+  3.  Iterate through the rest of the matrix, then use the first row/column "flags" to fill zeros.
+
+4. Zero Shifting (LeetCode 283: Move Zeroes)
+
+This is technically a 1D array problem, but it applies to 2D matrix flattening.
+
+-   **The Formula:** `Two-Pointer Swap`
+  1.  `lastNonZeroFoundAt = 0`
+  2.  Iterate with `j`: if `nums[j] != 0`, swap `nums[j]` with `nums[lastNonZeroFoundAt]` and increment the pointer.
+-   **Result:** This maintains the **relative order** of non-zero elements while pushing all zeros to the end.
+
+5. Matrix Diagonal Formulas
+
+Diagonals are frequently tested in "Diagonal Traverse" or "Toeplitz Matrix" problems.
+
+-   **Main Diagonal (Top-left to Bottom-right):** Every element has the property: 𝑖−𝑗=constant
+-   **Anti-Diagonal (Top-right to Bottom-left):** Every element has the property: 𝑖+𝑗=constant
+-   **Usage:** You can use a `HashMap<Integer, List<Integer>>` where the key is 𝑖+𝑗 or 𝑖−𝑗 to group diagonal elements together.
+
+6. **Sudoku Box Index:** (𝑖/3)×3+(𝑗/3)
