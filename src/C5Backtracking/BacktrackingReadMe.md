@@ -152,6 +152,182 @@ private void backtrackCombine(List<List<Integer>> results, List<Integer> current
 ```
 
 
+**LeetCode 17: Letter Combinations of a Phone Number** in Java, the most common approach is **Backtracking**. Since each digit can represent multiple letters, you are essentially traversing a decision tree where each level represents a digit in the input string.
+
+Java Solution (Backtracking)
+
+This solution uses a recursive helper function and a `StringBuilder` to explore all letter combinations in-place.
+
+```java
+import java.util.*;
+
+class Solution {
+    // Standard phone keypad mapping
+    private static final String[] KEYPAD = {
+        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
+
+    public List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+        backtrack(result, new StringBuilder(), digits, 0);
+        return result;
+    }
+
+    private void backtrack(List<String> result, StringBuilder current, String digits, int index) {
+        // Base case: if current string length matches digits length, we found a combination
+        if (index == digits.length()) {
+            result.add(current.toString());
+            return;
+        }
+
+        // Get letters for the current digit
+        String letters = KEYPAD[digits.charAt(index) - '0'];
+        for (char letter : letters.toCharArray()) {
+            current.append(letter);             // Choose
+            backtrack(result, current, digits, index + 1); // Explore
+            current.deleteCharAt(current.length() - 1); // Backtrack
+        }
+    }
+}
+
+```
+
+Use code with caution.
+
+Key Logic
+
+-   **Keypad Mapping:** An array is used where the index represents the digit (e.g., `KEYPAD[2]` is `"abc"`).
+-   **Recursive Process:** For each digit in the input, the algorithm loops through all its possible letters, adds one to the `StringBuilder`, and moves to the next digit.
+-   **Backtracking Step:** After returning from a recursive call, the last letter is removed (`deleteCharAt`) so the next letter in the loop can be tried in its place.
+
+Performance Analysis
+
+-   **Time Complexity:** 𝑂(𝑁×4𝑁) , where 𝑁
+    
+    is the length of the input string. This accounts for the maximum 4 possible letters per digit and the time taken to build each resulting string.
+-   **Space Complexity:**𝑂(𝑁), which is the maximum depth of the recursion stack.
+
+Example Execution (`digits = "23"`)
+
+1.  **Digit '2'**: Try 'a', 'b', and 'c'.
+2.  **Pick 'a'**: Move to digit '3'.
+3.  **Digit '3'**: Try 'd', 'e', and 'f'.
+    -   Form "ad", "ae", "af".
+4.  **Backtrack**: Go back to digit '2' and pick 'b', then repeat for digit '3' to form "bd", "be", "bf"
+
+Finding the Target Letter
+
+```java
+String letters = KEYPAD[digits.charAt(index) - '0'];
+
+```
+
+-   **`digits.charAt(index)`**: Retrieves the character (e.g., `'2'`) at the current position.
+-   **`- '0'`**: This is a Java trick to convert a character digit into its actual integer value. In memory, `'2'` is stored as its ASCII value (50), and `'0'` is 48. By subtracting them (50−48 ), you get the integer `2`.
+-   **`KEYPAD[...]`**: Uses that integer to look up the corresponding letters in your mapping array (e.g., index 2 returns `"abc"`).
+
+2. The Backtracking Loop (Choose, Explore, Un-choose)
+
+This loop handles the branching logic for each available letter:
+
+-   **Choose (`current.append(letter)`)**:  
+    The algorithm picks one letter (like `'a'`) and adds it to the `StringBuilder`. This builds the current path toward a full combination.
+-   **Explore (`backtrack(..., index + 1)`)**:  
+    The algorithm calls itself recursively, moving to the **next** digit (`index + 1`). It will stay in this "deeper" level of recursion until it finishes all combinations that start with the letter you just picked.
+-   **Backtrack (`current.deleteCharAt(...)`)**:  
+    Once the recursive call finishes, it returns to the current level. You must remove the letter you just added so that when the loop runs again, you can try the **next** letter (like `'b'`) in the same position.
+
+
+**LeetCode 22: Generate Parentheses** in Java, the standard and most efficient approach is **Backtracking**. This method explores all possible sequences while maintaining rules to ensure only "well-formed" strings are generated.
+
+Java Solution (Backtracking)
+
+This solution uses a `StringBuilder` to efficiently build strings and only branches into valid recursive calls.
+```java
+import java.util.*;
+
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<>();
+        backtrack(result, new StringBuilder(), 0, 0, n);
+        return result;
+    }
+
+    private void backtrack(List<String> result, StringBuilder current, int open, int close, int max) {
+        // Base case: current string length reaches 2n
+        if (current.length() == max * 2) {
+            result.add(current.toString());
+            return;
+        }
+
+        // Rule 1: Add an open parenthesis if we haven't used all n pairs
+        if (open < max) {
+            current.append("(");
+            backtrack(result, current, open + 1, close, max);
+            current.deleteCharAt(current.length() - 1); // Backtrack
+        }
+
+        // Rule 2: Add a close parenthesis only if it doesn't exceed open ones
+        if (close < open) {
+            current.append(")");
+            backtrack(result, current, open, close + 1, max);
+            current.deleteCharAt(current.length() - 1); // Backtrack
+        }
+    }
+}
+
+```
+
+
+Core Logic & Constraints
+
+-   **Rule 1 (Open):** You can always add an opening parenthesis `(` as long as you have not yet placed `n` of them.
+-   **Rule 2 (Close):** You can only add a closing parenthesis `)` if the current count of closing parentheses is strictly less than the count of opening ones. This ensures the string never becomes invalid (e.g., `())`).
+-   **Base Case:** When the length of the string hits `2 * n`, it is guaranteed to be a complete, balanced combination.
+
+Complexity Analysis
+
+-   **Time Complexity:** 𝑂(4𝑛𝑛√)
+    
+    , which is related to the**
+     𝑛𝑡ℎ
+    
+    Catalan number**. Each valid string represents one of the leaf nodes in the recursion tree.
+-   **Space Complexity:** **O(n)**, which is the maximum depth of the recursion stack (the length of the generated string)
+
+
+In the backtracking solution,
+
+`current.deleteCharAt(current.length() - 1);` is used to **undo the last move**. This is known as the **"backtracking step."**
+
+Since we are passing the _same_ `StringBuilder` object through every recursive call to save memory, we must manually clean up the string before the function returns to its caller.
+
+Here is why it is necessary:
+
+1.  **Shared State:** Unlike a `String` (which is immutable), a `StringBuilder` is **mutable**. When you add a parenthesis in a recursive branch, you are modifying the one and only `StringBuilder` used by all branches.
+2.  **The "Choice" Logic:** The algorithm makes a choice (add `(`) and explores all possibilities following that choice. Once it finishes exploring that path, it needs to return to the previous state to try a different choice (add `)`).
+3.  **Resetting the Path:** If you didn't delete the last character, the next branch would start with the character from the _previous_ branch still attached, resulting in a string that is too long and contains incorrect sequences.
+
+Visual Example (n=2)
+
+Imagine the recursion is at the point where `current` is `(`:
+
+-   **Step 1:** The code adds `(` ->  `current` is now `((`.
+-   **Step 2:** The recursive function for `((` runs until it finishes.
+-   **Step 3:** The function returns. Now we are back at the state where we need to try adding `)`.
+-   **Step 4 (The Backtrack):** We call `deleteCharAt`. `current` becomes `(` again.
+-   **Step 5:** The code adds `)` →`current` is now `()`.
+
+**Without that line**, when you got to Step 5, the `current` would still be `((`, and adding `)` would result in `(()`, which is the wrong starting point for that branch of the tree.
+
+Summary
+
+The `deleteCharAt` line ensures that each time the recursion "pops" back up to a previous level, the `StringBuilder` is **exactly as it was** before the call, allowing the next branch to start with a clean slate.
+
+========================================
 To solve the
 
 **N-Queens** problem using the backtracking template, we place queens row by row. At each row, we iterate through all columns and check if placing a queen is safe.
