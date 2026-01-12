@@ -65,3 +65,16 @@ Common Variations
 -   **Digits:** Use `s.charAt(i) - '0'` to convert the character `'5'` into the actual integer `5`.
 
 **Note for 2026:** While this is highly efficient, it only works for **fixed character sets**. If your input can contain any Unicode character (emojis, Chinese characters, etc.), you must use a `HashMap`.
+
+
+Why Arrays Outperform 10x-30X times bettter than HashMaps in 2026
+
+-   **Hashing Overhead:**  A  `HashMap`  must calculate a hash code for every key, handle potential collisions, and traverse buckets. An array uses a single direct index calculation.
+-   **Object Boxing:**  In Java, a  `HashMap`  cannot store primitives like  `int`. It must "box" them into  `Integer`  objects, which consumes significantly more memory and requires extra pointer dereferencing.
+-   **Cache Locality:**  Arrays are stored in contiguous memory blocks, allowing the CPU to pre-fetch data into the high-speed cache.  `HashMap`  nodes are typically scattered throughout the heap, leading to "cache misses" where the CPU must wait for slow RAM access.
+-   **Garbage Collection:**  An array is a single object. A large  `HashMap`  creates thousands of small objects (Map entries), increasing the workload for the Java Garbage Collector.
+
+When to Choose Which
+
+-   **Use a Frequency Array**  when the range of characters is known and small (e.g., lowercase English letters, ASCII 0-256) and performance is critical.
+-   **Use a HashMap**  when you are dealing with sparse data (e.g., counting frequencies in a dataset of unique 64-bit IDs) or when you need to support the full range of Unicode (emojis, different languages) where an array would be impossibly large.
