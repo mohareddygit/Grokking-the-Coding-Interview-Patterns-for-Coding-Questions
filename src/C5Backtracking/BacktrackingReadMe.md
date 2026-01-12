@@ -39,8 +39,6 @@ private void backtrack(List<List<Integer>> results, List<Integer> currentPath, i
 
 ```
 
-Use code with caution.
-
 Key Components Explained
 
 -   **Deep Copying Results:**  You must use  `new ArrayList<>(currentPath)`  because  `currentPath`  is a reference that changes.
@@ -52,7 +50,9 @@ Common Variations
 -   **Permutations:**  Usually omit the  `start`  index and use a  `boolean[] visited`  array to track which elements are already in the  `currentPath`.
 -   **Subsets:**  Every step in the recursion is a valid solution, so  `results.add(new ArrayList<>(currentPath))`  is placed at the very start of the  `backtrack`  method, before any conditions.
 
+![](subsets.png)
 
+![](permutation.png)
 
 [Subsets (LeetCode 78)](https://leetcode.com/problems/subsets/)
 
@@ -80,8 +80,6 @@ private void backtrackSubsets(List<List<Integer>> results, List<Integer> current
 }
 
 ```
-
-Use code with caution.
 
 2. [Permutations (LeetCode 46)](https://leetcode.com/problems/permutations/)
 

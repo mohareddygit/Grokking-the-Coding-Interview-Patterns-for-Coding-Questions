@@ -76,6 +76,12 @@ The space-optimized version of the Two-Stack Approach improves memory usage by o
 Why this is Optimized
 In a standard approach, if you push 1,000 elements that are all larger than the current minimum, your minStack still grows to 1,000 elements. In the optimized version, the minStack size stays at 1, significantly reducing auxiliary space in many real-world scenarios
 
+![](minStackPush.png)
+
+![](minStackPop.png)
+
+https://medium.com/@mishraananya0001/min-stack-a4fec0f2a475 
+
 ```java
 class MinStack {
     private Stack<Integer> stack = new Stack<>();
