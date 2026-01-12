@@ -133,3 +133,76 @@ class Solution {
 - How would the solution change if the input was not binary trees but general trees?
 
 You can find the full solution [here](Solution.java)
+
+
+##LeetCode 100: Same Tree** 
+iteratively, you can use either a **Stack** (for Depth-First Search) or a **Queue** (for Breadth-First Search). The iterative approach is often preferred in production to prevent stack overflow errors on very deep trees.
+
+1. The Idea: Synchronized Traversal
+
+The core logic is to traverse both trees simultaneously and compare the nodes at each step. For the trees to be the same:
+
+-   Both current nodes must be `null`, OR
+-   Both current nodes must be non-null AND have the same value.
+-   If one is `null` and the other is not, or their values differ, the trees are not the same.
+
+2. Solution Approach (BFS with a Queue)
+
+3.  Initialize a single `Queue` and add the root nodes of both trees as a pair.
+4.  While the queue is not empty:
+    -   Retrieve the next pair of nodes (`p` and `q`).
+    -   **Check equality:**
+        -   If both are `null`, continue to the next pair (they match).
+        -   If only one is `null`, or if `p.val != q.val`, return `false`.
+    -   **Add children:** Push the left children of both nodes as a pair, then the right children as a pair into the queue.
+5.  If the loop completes without returning `false`, return `true`.
+
+
+```java
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(p);
+        queue.add(q);
+
+        while (!queue.isEmpty()) {
+            TreeNode nodeP = queue.poll();
+            TreeNode nodeQ = queue.poll();
+
+            // Both null is okay, continue checking others
+            if (nodeP == null && nodeQ == null) continue;
+            
+            // Structural mismatch or value mismatch
+           /* if (nodeP == null || nodeQ == null || nodeP.val != nodeQ.val) {
+                return false;
+            }*/
+
+            if (nodeP == null && nodeQ != null) return false;
+            if (nodeQ == null && nodeP != null) return false;
+            
+            // 2. Since we know both are NOT null, we can safely check values
+            if (nodeP.val != nodeQ.val) return false;
+
+            // Add corresponding children as pairs
+            queue.add(nodeP.left);
+            queue.add(nodeQ.left);
+            queue.add(nodeP.right);
+            queue.add(nodeQ.right);
+        }
+        return true;
+    }
+}
+
+```
+
+4. Complexity Analysis
+
+-   **Time Complexity:** **𝑂(𝑁)**, where 𝑁 is the number of nodes in the smaller tree, as we visit each node at most once.
+-   **Space Complexity:** **𝑂(𝑁)**. In the worst case (a perfectly balanced tree), the queue can hold up to 𝑂(𝑁) nodes at the widest level.
+
+5. Why use `Deque` or `LinkedList` instead of `Stack`?
+
+In Java, the legacy `Stack` class is synchronized, which adds unnecessary performance overhead. For iterative solutions in 2026, it is standard practice to use `ArrayDeque` or `LinkedList` as they are more efficient for single-threaded tasks.

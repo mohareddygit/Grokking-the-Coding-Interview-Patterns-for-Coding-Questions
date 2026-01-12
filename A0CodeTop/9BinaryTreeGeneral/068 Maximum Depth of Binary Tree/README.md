@@ -129,6 +129,12 @@ class Solution {
    - Each level's nodes are processed, and their children are added to the queue.
    - Increment the depth counter after processing each level.
 
+##Why use Iterative BFS?
+While recursive DFS is more concise, iterative BFS is often preferred in production environments 
+to avoid **StackOverflowError** on extremely deep or skewed trees.
+It also makes it trivial to solve related problems 
+like Level Order Traversal (LeetCode 102) or Binary Tree Right Side View (LeetCode 199)
+
 ---
 
 ### Time Complexity ⏳
