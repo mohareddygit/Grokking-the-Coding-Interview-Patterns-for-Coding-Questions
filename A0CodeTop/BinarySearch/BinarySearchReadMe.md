@@ -26,7 +26,7 @@ public int standardBinarySearch(int[] arr, int target) {
 
 Note: **Binary search for a key on an input array with Duplicates:** If the array contains multiple elements equal to the search key, there is no guarantee which specific index will be returned
 
-2. **Lower Bound Binary Search**
+2. **Lower Bound Binary Search** First index (≥)  target.
 
 The goal of a lower bound search is to find the **first position** where an element is **not less than** (i.e., ≥) the target. This is useful for finding the first occurrence in a list with duplicates or the correct insertion point.
 

@@ -3,6 +3,10 @@
 ArrayList + Lower Bound BinarySearch - O(nlogn) - optimized
 https://www.youtube.com/watch?v=TocJOW6vx_I
 
+https://docs.vultr.com/problem-set/longest-increasing-subsequence 
+
+binary search based method (like the patience sorting algorithm)
+
 If using binarySearch(int[] a, int key) then
 The "insertion point" is the index where the key would be
 inserted while maintaining order (the index of the first element greater than the key).
