@@ -56,6 +56,16 @@ nums = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
 
 To achieve an `O(n)` time complexity, a `HashSet` can be used to store all elements of the array. This allows us to quickly check the existence of consecutive elements.
 
+The core idea is to identify the **start** of every possible consecutive sequence. A number 𝑥 is the start of a sequence only if 𝑥−1 is not present in the input.
+
+1.  **Insert all numbers into a HashSet:** This allows for 𝑂(1) average-time lookups.
+2.  **Iterate through the Set:** For each number `num`, check if `num - 1` exists in the set.
+3.  **Identify Sequence Starts:**
+    -   If `num - 1` is **not** in the set, `num` is the first element of a sequence.
+    -   If `num - 1` **is** in the set, skip it (this number will be counted later as part of a sequence starting at a smaller value).
+4.  **Count the Streak:** Once a start is found, use a `while` loop to check for `num + 1`, `num + 2`, etc., and increment a counter until the sequence breaks.
+5.  **Update Max Length:** Track the longest streak found during the iteration
+
 ---
 
 #### Java Solution (Using HashSet)
@@ -77,7 +87,7 @@ class Solution {
         int longestStreak = 0;
 
         for (int num : numSet) {
-            // Only start a sequence if num is the beginning of the sequence
+            // Check if 'num' is the start of a sequence
             if (!numSet.contains(num - 1)) {
                 int currentNum = num;
                 int currentStreak = 1;
