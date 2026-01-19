@@ -32,7 +32,7 @@ class CT7_Combinations_LC77 {
 
     public static void main(String[] args) {
         CT7_Combinations_LC77 CT7_Combinations_LC77 = new CT7_Combinations_LC77();
-        System.out.println(CT7_Combinations_LC77.combine(4,2));
+        System.out.println(CT7_Combinations_LC77.combine(3,2));
 
     }
 }

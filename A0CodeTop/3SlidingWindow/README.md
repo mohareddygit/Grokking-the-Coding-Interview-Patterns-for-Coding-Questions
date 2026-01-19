@@ -156,8 +156,101 @@ void main() {
 
 ---
 
-## 🏁 Conclusion
+## 🏁 Template
 
-The **Sliding Window** technique is an essential tool for solving many array and string problems. Mastering it can make complex problems much simpler and your solutions more efficient. Keep sliding and coding! 🎯
+This template is the "Variable Size Sliding Window" standard. 
+It is the most versatile pattern for problems like Longest Substring Without Repeating Characters or Minimum Size Subarray Sum.
+Sliding Window Template 
 
-Happy Coding !!!
+```java
+public int slidingWindowTemplate(int[] nums, int target) {
+int left = 0;
+int windowData = 0; // Can be a sum, a counter, or a frequency map
+int result = 0;     // Stores max, min, or count
+
+    // Outer Loop: Expand the window using the 'right' pointer
+    for (int right = 0; right < nums.length; right++) {
+        // 1. ADD the current element into window logic
+        windowData += nums[right]; 
+
+        // 2. INNER WHILE LOOP: Shrink the window if the condition is met
+        // This 'condition' depends on if you're looking for a max, min, or specific sum
+        while (/* windowData meets specific condition */) {
+            
+            // a) Update result if looking for the SMALLEST window (e.g., Min Subarray Sum)
+            // result = Math.min(result, right - left + 1);
+
+            // b) REMOVE the element at 'left' from window logic
+            windowData -= nums[left];
+            
+            // c) Move the left pointer forward
+            left++;
+        }
+
+        // 3. Update result if looking for the LONGEST window (e.g., Longest Substring)
+        // result = Math.max(result, right - left + 1);
+    }
+
+    return result;
+}
+```
+
+When to use which "Update Result" position:
+
+1.  **If finding the SHORTEST window (e.g., LC 209):**
+   -   Update  `result`  **inside**  the  `while`  loop.
+   -   You want the smallest size that  _just barely_  satisfies the condition before you shrink it further.
+2.  **If finding the LONGEST window (e.g., LC 3, LC 424):**
+   -   Update  `result`  **outside**  the  `while`  loop (after shrinking).
+   -   The  `while`  loop is used to "clean up" the window until it is valid; once valid, you measure its length.
+
+Common Condition Examples
+
+-   **Unique Characters:**  `while (map.get(charAtRight) > 1)`  (shrink until no duplicates).
+-   **Sum exceeds K:**  `while (currentSum > k)`  (shrink until sum is within bounds).
+-   **Character Budget:**  `while (charsToReplace > k)`  (shrink until you have enough replacements).
+
+
+## Fixed Window
+For a **fixed window** of size `K`, you do not need a `while` loop for shrinkage. Instead, you maintain a constant distance between the `left` and `right` pointers.
+
+In Java, the most common way to implement this is to process the first window separately and then use a `for` loop to slide across the rest of the input.
+
+Fixed Window Template (Java)
+
+```java
+public void fixedWindowTemplate(int[] nums, int k) {
+    if (nums == null || nums.length < k) return;
+
+    // 1. Initialize the data for the FIRST window [0...k-1]
+    int windowData = 0; // Could be a sum, frequency array, etc.
+    for (int i = 0; i < k; i++) {
+        // windowData += nums[i];
+    }
+    
+    // 2. Process the result for the very first window
+    // updateResult(windowData);
+
+    // 3. Slide the window from index k to the end
+    for (int right = k; right < nums.length; right++) {
+        // The element to REMOVE is at index (right - k)
+        int leftElement = nums[right - k];
+        // The element to ADD is at index right
+        int rightElement = nums[right];
+
+        // 4. Update windowData: subtract the left, add the right
+        // windowData = windowData - leftElement + rightElement;
+
+        // 5. Update result after each shift
+        // updateResult(windowData);
+    }
+}
+
+```
+
+Key Differences from Variable Window
+
+-   **No Inner Loop:** Since the window size is constant, you only remove **one** element for every **one** element you add.
+-   **Index Math:** The element leaving the window is always at `right - k`.
+-   **Efficiency:** This is strictly 𝑂(𝑁) time because every element is visited exactly once by the "add" logic and once by the "remove" logic.
+

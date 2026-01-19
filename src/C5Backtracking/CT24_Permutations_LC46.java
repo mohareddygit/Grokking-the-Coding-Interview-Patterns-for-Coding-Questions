@@ -67,7 +67,7 @@ public class CT24_Permutations_LC46 {
         for (int i = 0; i < nums.length; i++) {
             // If the number is already used, skip it
             if (used[i]) continue;
-
+    
             // 1. CHOOSE: Mark as used and add to path
             used[i] = true;
             currentPath.add(nums[i]);

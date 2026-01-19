@@ -36,7 +36,7 @@ public class DP_4_Minimum_Coin_Change_B17 {
             for (int coin : coins) {
                 // If the current coin denomination is less than or equal to the current amount 'i',
                 // we can consider using this coin.
-                if (coin <= i) {
+                if (i >= coin) {
                     // Update dp[i] to the minimum of its current value and
                     // the number of coins needed for the remaining amount (i - coin) plus 1 (for the current coin).
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);

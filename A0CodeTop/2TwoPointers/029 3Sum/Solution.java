@@ -13,52 +13,45 @@ import java.util.List;
 
 public class Solution {
 	public List<List<Integer>> threeSum(int[] nums) {
-		// list to hold the resulting triplets
 		List<List<Integer>> result = new ArrayList<>();
-
-		// soft the array to facilitate finding triplets
+		// Step 1: Sort the array to use two pointers and handle duplicates
 		Arrays.sort(nums);
 
 		// loop through the array, stopping two elements before the end
-		for (int i = 0; i < nums.length - 2; i++){
-			// skip duplicate for the similar number
+		for (int i = 0; i < nums.length - 2; i++) {
+
+			// Early exit: if the current smallest number is > 0, no zero sum is possible
+			if (nums[i] > 0) break;
+
+			// Step 2: Skip duplicates for the first element
 			if (i > 0 && nums[i] == nums[i - 1]) continue;
 
-			// set two pointer
+			// Step 3: set two pointer
 			// one just after the current number and the other at the end of the nums
 			int left = i + 1;
 			int right = nums.length - 1;
 
 			// use two pointer to find triplet
-			while (left < right){
-				// Calculate the sum of the triplet
+			while (left < right) {
 				int sum = nums[i] + nums[left] + nums[right];
 
-				// if sum is less than zero, move the left pointer to increase the sum
 				if (sum < 0) {
-					left ++;
-				} else if (sum > 0){
-					// if the sum is greater than zero, move the right pointer to decrease the sum
-					right --;
+					left++; // if sum is less than zero, move the left pointer to increase the sum
+				} else if (sum > 0) {
+					right--;  // if the sum is greater than zero, move the right pointer to decrease the sum
 				} else {
-					// if sum equal 0, we found triplet
-					// add the triplet to the result list
 					result.add(Arrays.asList(nums[i], nums[left], nums[right]));
-
-					// To avoid generating duplicate triplets in the results
-					// skip duplicate for the second number
+					// Skip duplicates for the second number
 					while (left < right && nums[left] == nums[left + 1]) left++;
-					// ship duplicate for the third number
+					// Skip duplicates for the third number
 					while (left < right && nums[right] == nums[right - 1]) right--;
-
-					// Move both pointers inward
+					// Move pointers inward after finding a match
 					left++;
 					right--;
 				}
 			}
 		}
 
-		// return the list of unique triplets
 		return result;
 	}
 }
