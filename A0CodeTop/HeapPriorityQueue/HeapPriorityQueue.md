@@ -380,3 +380,194 @@ class Solution {
 
 ```
 
+
+LeetCode 621. Task Scheduler, the most efficient approach is a **Greedy/Mathematical** strategy, though it can also be solved using a **Max-Heap**.
+
+**The Strategy: Greedy Math - TODO**
+
+The "limiting factor" is the task that appears most frequently. We should space those out first and fill the gaps with other tasks.
+
+1.  **Find the Maximum Frequency**: Count the occurrences of each task. Let `maxFreq` be the highest count.
+2.  **Count Max Tasks**: Determine how many different tasks have that same `maxFreq`. Let this be `maxCount`.
+3.  **Calculate Minimum Slots**:
+    -   Think of the most frequent task as creating "frames." If 'A' appears 3 times and 𝑛=2, the frames look like: `A _ _ A _ _ A`.
+    -   The number of empty "gaps" is `(maxFreq - 1)`.
+    -   The size of each gap is `(n + 1)`.
+    -   So, the base area is `(maxFreq - 1) * (n + 1)`.
+    -   Finally, add the number of tasks that also have the maximum frequency (`maxCount`).
+4.  **Edge Case**: If you have many different tasks, you might not have any "idle" time at all. In that case, the answer is simply the total number of tasks.
+
+**Java Implementation (Greedy Math)**
+
+
+
+```java
+class Solution {
+    public int leastInterval(char[] tasks, int n) {
+        int[] freq = new int[26];
+        for (char t : tasks) freq[t - 'A']++;
+        
+        int maxFreq = 0;
+        for (int f : freq) maxFreq = Math.max(maxFreq, f);
+        
+        int maxCount = 0;
+        for (int f : freq) {
+            if (f == maxFreq) maxCount++;
+        }
+        
+        // Formula: (Total full cycles - 1) * cycle_length + leftovers
+        int ans = (maxFreq - 1) * (n + 1) + maxCount;
+        
+        // If the formula result is smaller than the task count, 
+        // it means we have no idle slots.
+        return Math.max(ans, tasks.length);
+    }
+}
+
+```
+
+**Alternative: Max-Heap Solution**
+
+If an interviewer asks you to **simulate** the process, use a `PriorityQueue` (Max-Heap) and a `Queue` (Waitlist).
+
+-   **Max-Heap**: Stores the counts of available tasks.
+-   **Waitlist**: Stores tasks currently on "cool-down" along with the time they become available again.
+
+**Complexity Analysis**
+
+-   **Time Complexity**:**𝑂(𝑁)** for the Greedy Math approach (where 𝑁 is the number of tasks). We iterate once to count and once through the 26-length frequency array.
+-   **Space Complexity**:**𝑂(1)** because the frequency array size is fixed at 26 regardless of input size.
+
+**Quick Check**
+
+If `tasks = ["A","A","A","B","B","B"]` and `n = 2`:
+
+1.  `maxFreq` = 3 (for A and B).
+2.  `maxCount` = 2 (A and B both appear 3 times).
+3.  Calculation: `(3 - 1) * (2 + 1) + 2` = `2 * 3 + 2 = 8`.
+4.  Result: `8`. (Sequence: `A -> B -> idle -> A -> B -> idle -> A -> B`)
+
+The **Max-Heap** approach for **LeetCode 621** is a simulation strategy that is often requested in interviews to see if you can handle complex state management and cooldown periods.
+
+https://youtu.be/s8p8ukTyA2I?si=yLn-1MtP3QvGwmpI 
+
+**The Simulation Logic**
+
+Instead of using a mathematical formula, we simulate the CPU one tick at a time.
+
+1.  **Max-Heap**: Stores the frequencies of tasks currently available for execution. We always pick the task with the highest remaining frequency to minimize idle time.
+2.  **Cooldown Queue**: Stores tasks that are currently in their "cooling period." We store them as pairs: `[remaining_count, time_when_available]`.
+3.  **The Loop**: At each unit of `time`:
+    -   If a task is available in the **Max-Heap**, execute it, decrement its frequency, and (if still >0) move it to the **Cooldown Queue**.
+    -   Check if any task in the **Cooldown Queue** has finished its waiting period; if so, move it back to the **Max-Heap**.
+
+
+```java
+import java.util.*;
+
+class Solution {
+    public int leastInterval(char[] tasks, int n) {
+        if (n == 0) return tasks.length;
+
+        // 1. Map frequencies
+        int[] freq = new int[26];
+        for (char t : tasks) freq[t - 'A']++;
+
+        // 2. Max-Heap for available task counts
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        for (int f : freq) {
+            if (f > 0) maxHeap.add(f);
+        }
+
+        // 3. Queue for cooldown tasks: stores [remaining_count, available_at_time]
+        Queue<int[]> queue = new LinkedList<>();
+        int time = 0;
+
+        while (!maxHeap.isEmpty() || !queue.isEmpty()) {
+            time++;
+
+            if (!maxHeap.isEmpty()) {
+                int count = maxHeap.poll() - 1;
+                if (count > 0) {
+                    queue.add(new int[]{count, time + n});
+                }
+            }
+
+            // Check if any task is done with cooldown
+            if (!queue.isEmpty() && queue.peek()[1] == time) {
+                maxHeap.add(queue.poll()[0]);
+            }
+        }
+
+        return time;
+    }
+}
+
+```
+
+**Complexity Analysis**
+
+-   **Time Complexity**:**𝑂(𝑁)**.  Although we use a heap, the number of unique tasks is constant (26). Each task is added and removed from the heap/queue exactly once.
+-   **Space Complexity**:**𝑂(1)**. We only store up to 26 task frequencies in our data structures, regardless of how large the input array `tasks` is.
+
+**Comparison: Math vs. Heap**
+
+-   **Greedy Math**: Faster to write and execute; preferred for finding the **total time** only.
+-   **Max-Heap**: Better if the interviewer asks you to **return the actual schedule string** (e.g., `"A -> B -> idle -> A..."`) because it literally simulates the execution order.
+
+Would you like to see how to adapt this to **767. Reorganize String** where you must ensure no two identical characters are adjacent?
+
+
+
+[LeetCode 295. Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/), the optimal approach is to  use  **two heaps**  to maintain the lower and upper halves of the numbers seen so far.
+
+**The Strategy: Two Heaps**
+
+By splitting the data into two halves, you can access the middle elements in constant time.
+
+-   **Max-Heap (`small`)**: Stores the  **lower half**  of the numbers. The largest number of this half is at the top.
+-   **Min-Heap (`large`)**: Stores the  **upper half**  of the numbers. The smallest number of this half is at the top.
+
+**Key Invariant**: All elements in the max-heap are less than or equal to those in the min-heap. We also ensure their sizes differ by at most 1.
+
+https://youtu.be/SdURPlHqc1g?si=RnMTnBO96whNey8X 
+```java 
+class MedianFinder {
+    // Max-heap for the lower half
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+    // Min-heap for the upper half
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+    boolean even = true;
+
+    public void addNum(int num) {
+        if (even) {
+            // If we are adding to make the total count odd, 
+            // the new median will end up in maxHeap.
+            minHeap.offer(num);
+            maxHeap.offer(minHeap.poll());
+        } else {
+            // If we are adding to make the total count even,
+            // we balance by moving an element to minHeap.
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+        }
+        even = !even;
+    }
+
+    public double findMedian() {
+        // USE PEEK, NOT POLL! 
+return even?(maxHeap.peek() + minHeap.peek())/ 2.0:maxHeap.peek();
+    }
+}
+
+```
+
+**Why your  `addNum`  logic works:**
+
+Your approach is a clever "shuttle" method:
+
+1.  When  **even**  (total count will become odd): You push to  `minHeap`  and move the smallest value over to  `maxHeap`.  `maxHeap`  now holds the median.
+2.  When  **odd**  (total count will become even): You push to  `maxHeap`  and move the largest value over to  `minHeap`. Both heaps are now equal size.
+
+
+
