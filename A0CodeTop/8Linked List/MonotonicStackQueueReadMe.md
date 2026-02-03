@@ -12,6 +12,9 @@ LeetCode 23. Merge k Sorted Lists, the most efficient approach is using a **Min-
 
 https://youtube.com/shorts/q7y8HJObWmU?si=e5clpJkvqLNDs7fN
 
+<img width="859" height="264" alt="image" src="https://github.com/user-attachments/assets/8b03037b-312d-4d7d-85dc-87598c907539" />
+
+
 <img width="753" height="174" alt="image" src="https://github.com/user-attachments/assets/df1be118-e759-457f-9239-698a47c2ec41" />
 
 
