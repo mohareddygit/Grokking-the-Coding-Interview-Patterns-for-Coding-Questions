@@ -12,13 +12,6 @@ LeetCode 23. Merge k Sorted Lists, the most efficient approach is using a **Min-
 
 https://youtube.com/shorts/q7y8HJObWmU?si=e5clpJkvqLNDs7fN
 
-<img width="859" height="264" alt="image" src="https://github.com/user-attachments/assets/8b03037b-312d-4d7d-85dc-87598c907539" />
-
-
-<img width="753" height="174" alt="image" src="https://github.com/user-attachments/assets/df1be118-e759-457f-9239-698a47c2ec41" />
-
-
-
 ```java
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
@@ -259,8 +252,10 @@ Would you like to explore how to solve Trapping Rain Water using a Monotonic Sta
     -   **Calculate Water**: The trapped water for this layer is:  
         `Width * (min(LeftWallHeight, RightWallHeight) - BottomHeight)`.
 
-[Uploading image.png…]()
-![Uploading image.png…]()
+<img width="859" height="264" alt="image" src="https://github.com/user-attachments/assets/8b03037b-312d-4d7d-85dc-87598c907539" />
+
+
+<img width="753" height="174" alt="image" src="https://github.com/user-attachments/assets/df1be118-e759-457f-9239-698a47c2ec41" />
 
 https://youtu.be/iA-PK_hwzKc?si=kYDRqvLI8hwNY1kU
 
