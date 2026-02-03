@@ -255,6 +255,11 @@ Would you like to explore how to solve Trapping Rain Water using a Monotonic Sta
     -   **Calculate Water**: The trapped water for this layer is:  
         `Width * (min(LeftWallHeight, RightWallHeight) - BottomHeight)`.
 
+[Uploading image.png…]()
+![Uploading image.png…]()
+
+https://youtu.be/iA-PK_hwzKc?si=kYDRqvLI8hwNY1kU
+
 **Java Implementation**
 
 Using `Deque` as a stack is the modern, high-performance standard for Java interviews.
